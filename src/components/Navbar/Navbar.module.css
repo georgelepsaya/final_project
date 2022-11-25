@@ -1,0 +1,78 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  margin: 25px 0 35px 0;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.link {
+  text-decoration: none;
+  transition: all 150ms ease-in-out;
+}
+
+.title {
+  font-weight: 600;
+  margin: auto 0;
+  text-align: center;
+  font-size: 18px;
+  color: rgb(43, 107, 235);
+}
+
+.menu_item {
+  transition: all 150ms ease-in-out;
+}
+
+.menu_item:hover {
+  transform: translateY(4px);
+}
+
+.button_link {
+  padding: 5px 15px;
+  margin: auto 0;
+  box-shadow: 0px 4px 6px rgba(153, 153, 153, 0.3);
+  border-radius: 7px;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+
+.home_button {
+  border: 1px solid rgb(255, 255, 255);
+  color: rgb(105, 105, 105);
+}
+
+.home_button:hover {
+  box-shadow: 0px 0px 6px rgba(207, 207, 207, 0.268);
+  border: 1px solid rgb(238, 238, 238);
+  color: #000;
+}
+
+.home_button:active {
+  opacity: 0.5;
+}
+
+.dashboard_button {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(159, 191, 255);
+  color: rgb(61, 114, 220);
+}
+
+.dashboard_button:hover {
+  background-color: rgb(94, 142, 237);
+  box-shadow: 0px 0px 10px rgba(94, 142, 237, 0.8);
+  border: 1px solid rgb(94, 142, 237);
+  color: #fff;
+}
+
+.dashboard_button:active {
+  opacity: 0.5;
+}

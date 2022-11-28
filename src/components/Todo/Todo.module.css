@@ -1,0 +1,14 @@
+.container_grid {
+  margin: 0 auto;
+  display: grid;
+  gap: 20px 30px;
+  grid-template-columns: auto auto auto;
+  width: 80%;
+}
+
+@media (max-width: 1130px) {
+  .container_grid {
+    grid-template-columns: auto auto;
+    width: 70%;
+  }
+}

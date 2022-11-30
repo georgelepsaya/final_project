@@ -3,9 +3,9 @@ import styles from "./EditTodoBlock.module.css"
 import EditTodo from './EditTodo';
 import { FaPlus } from "react-icons/fa";
 
-const EditTodoBlock = ({ initialInputs, initialTitle, blockId,  setIsEditing }) => {
+const EditTodoBlock = ({ initialInputs, block,  setIsEditing }) => {
   const [newInputs, setNewInputs] = useState(initialInputs);
-  const [blockTitle, setBlockTitle] = useState(initialTitle);
+  const [blockTitle, setBlockTitle] = useState(block.title);
 
   // adding new input
   const onAddInput = () => {
@@ -23,6 +23,16 @@ const EditTodoBlock = ({ initialInputs, initialTitle, blockId,  setIsEditing }) 
   // changing title
   const handleChangeTitle = (e) => {
     setBlockTitle(e.target.value);
+  }
+
+  const updateBlockTitle = async (block) => {
+    await fetch(`http://localhost:3000/todo_blocks/${block.id}`, {
+      method: "PUT",
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({...block, title: blockTitle})
+    })
   }
 
   const updateTodo = async (todo) => {
@@ -60,11 +70,13 @@ const EditTodoBlock = ({ initialInputs, initialTitle, blockId,  setIsEditing }) 
     // first save all todos
     newInputs.forEach(async todo => {
       if (todo.block_id !== "") {
-        updateTodo(todo);
+        await updateTodo(todo);
       } else {
-        saveTodo({...todo, block_id: blockId});
+        await saveTodo({...todo, block_id: block.id});
       }
     })
+
+    await updateBlockTitle(block);
 
     setIsEditing(false);
   }

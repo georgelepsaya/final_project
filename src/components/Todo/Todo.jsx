@@ -6,6 +6,7 @@ import styles from "./Todo.module.css"
 const Todo = () => {
 
   const [todoBlocks, setTodoBlocks] = useState([]);
+  const [update, setUpdate] = useState(false);
 
   useEffect(() => {
     const getTodoBlocks = async () => {
@@ -13,7 +14,7 @@ const Todo = () => {
       setTodoBlocks(todoBlocks);
     }
     getTodoBlocks();
-  }, [])
+  }, [update])
 
   // Fetch Data
   const fetchData = async () => {
@@ -52,7 +53,7 @@ const Todo = () => {
       <NewTodoBlock addTodoBlock={addTodoBlock} />
       {
         todoBlocks &&
-        todoBlocks.map(block => <TodoBlock key={block.id} data={block} deleteBlock={deleteBlock} />)
+        todoBlocks.map(block => <TodoBlock setUpdate={setUpdate} key={block.id} data={block} deleteBlock={deleteBlock} />)
       }
     </div>
   )

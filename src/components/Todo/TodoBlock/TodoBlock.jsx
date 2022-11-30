@@ -4,7 +4,7 @@ import ListItem from './ListItem'
 import { FaPen, FaTrashAlt } from 'react-icons/fa';
 import EditTodoBlock from '../EditTodoBlock/EditTodoBlock';
 
-const TodoBlock = ({ data, deleteBlock }) => {
+const TodoBlock = ({ data, deleteBlock, setUpdate }) => {
   const [todoList, setTodoList] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -14,7 +14,8 @@ const TodoBlock = ({ data, deleteBlock }) => {
       setTodoList(fetchedList);
     }
     getData();
-  }, [])
+    setUpdate(prev => !prev);
+  }, [isEditing, data.id, setUpdate])
 
   const fetchTodoList = async (block_id) => {
     const res = await fetch(`http://localhost:3000/todos?block_id=${block_id}`);
@@ -25,7 +26,7 @@ const TodoBlock = ({ data, deleteBlock }) => {
 
   if (isEditing) {
     return (
-      <EditTodoBlock initialInputs={todoList} initialTitle={data.title} blockId={data.id} setIsEditing={setIsEditing} />
+      <EditTodoBlock initialInputs={todoList} block={data} setIsEditing={setIsEditing} />
     )
   }
 

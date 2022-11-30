@@ -1,16 +1,18 @@
 import React, { useState } from 'react'
-import styles from "./NewTodoBlock.module.css"
-import NewTodo from './NewTodo'
-import { FaPlus } from 'react-icons/fa';
+import styles from "./EditTodoBlock.module.css"
+import EditTodo from './EditTodo';
+import { FaPlus } from "react-icons/fa";
 
-const NewTodoBlock = ({ addTodoBlock }) => {
-  const [newInputs, setNewInputs] = useState([]);
-  const [blockTitle, setBlockTitle] = useState("");
+const EditTodoBlock = ({ initialInputs, initialTitle, blockId,  setIsEditing }) => {
+  const [newInputs, setNewInputs] = useState(initialInputs);
+  const [blockTitle, setBlockTitle] = useState(initialTitle);
 
+  // adding new input
   const onAddInput = () => {
     setNewInputs(prev => [...prev, {text: "", completed: false, block_id: "", temp: Math.random()}])
   }
 
+  // changing text
   const handleChangeTodoText = (newText, temp) => {
     setNewInputs(prev => {
       prev.find(todo => todo.temp === temp).text = newText;
@@ -18,8 +20,19 @@ const NewTodoBlock = ({ addTodoBlock }) => {
     });
   }
 
+  // changing title
   const handleChangeTitle = (e) => {
     setBlockTitle(e.target.value);
+  }
+
+  const updateTodo = async (todo) => {
+    await fetch(`http://localhost:3000/todos/${todo.id}`, {
+      method: "PUT",
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(todo)
+    })
   }
 
   const saveTodo = async (todo) => {
@@ -32,34 +45,28 @@ const NewTodoBlock = ({ addTodoBlock }) => {
     })
   }
 
-  const handleDeleteTodo = (temp) => {
+  const handleDeleteTodo = async (id, temp) => {
+    if (id) {
+      await fetch(`http://localhost:3000/todos/${id}`, {
+        method: "DELETE"
+      })
+    }
     setNewInputs(prev => prev.filter(todo => todo.temp !== temp))
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // we generate new block id
-    const block_id = Math.random().toString();
 
     // first save all todos
     newInputs.forEach(async todo => {
-      if (todo.text) {
-        await saveTodo({...todo, block_id: block_id});
+      if (todo.block_id !== "") {
+        updateTodo(todo);
+      } else {
+        saveTodo({...todo, block_id: blockId});
       }
     })
 
-    // then save a block
-    await addTodoBlock(
-      {
-        title: blockTitle,
-        id: block_id
-      }
-    );
-
-    // reset inputs
-    setBlockTitle("");
-    setNewInputs([]);
+    setIsEditing(false);
   }
 
   return (
@@ -68,7 +75,7 @@ const NewTodoBlock = ({ addTodoBlock }) => {
       <input className={styles.title_input} onChange={handleChangeTitle} value={blockTitle} type="text" placeholder='Title' />
       {newInputs && newInputs.map(newInput => {
         return (
-          <NewTodo data={newInput} key={newInput.temp} deleteTodo={handleDeleteTodo} changeTodoText={handleChangeTodoText} />
+          <EditTodo data={newInput} key={newInput.temp} deleteTodo={handleDeleteTodo} changeTodoText={handleChangeTodoText} />
         )
       })}
       <button className={styles.add_todo_btn} onClick={onAddInput} type="button" >
@@ -78,4 +85,4 @@ const NewTodoBlock = ({ addTodoBlock }) => {
   )
 }
 
-export default NewTodoBlock
+export default EditTodoBlock

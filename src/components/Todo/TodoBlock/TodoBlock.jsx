@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 import styles from "./TodoBlock.module.css"
 import ListItem from './ListItem'
 import { FaPen, FaTrashAlt } from 'react-icons/fa';
+import EditTodoBlock from '../EditTodoBlock/EditTodoBlock';
 
 const TodoBlock = ({ data, deleteBlock }) => {
   const [todoList, setTodoList] = useState([]);
+  const [isEditing, setIsEditing] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
@@ -21,10 +23,16 @@ const TodoBlock = ({ data, deleteBlock }) => {
     return json;
   }
 
+  if (isEditing) {
+    return (
+      <EditTodoBlock initialInputs={todoList} initialTitle={data.title} blockId={data.id} setIsEditing={setIsEditing} />
+    )
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.btn_group}>
-        <div className={styles.edit_btn}>
+        <div className={styles.edit_btn} onClick={() => setIsEditing(prev => !prev)}>
           <FaPen className={styles.edit_icon} />
         </div>
         <div className={styles.delete_btn} onClick={() => deleteBlock(data.id)} >

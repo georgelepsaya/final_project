@@ -30,6 +30,15 @@ const Todo = () => {
       method: "DELETE",
     })
 
+    const data = await fetch(`http://localhost:3000/todos?block_id=${id}`)
+    const tasks = await data.json();
+
+    for (let task of tasks) {
+      await fetch(`http://localhost:3000/todos/${task.id}`, {
+        method: "DELETE",
+      })
+    }
+
     setTodoBlocks(todoBlocks.filter(todoBlock => todoBlock.id !== id));
   }
 

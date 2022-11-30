@@ -1,0 +1,39 @@
+.todo_input {
+  width: 90%;
+  height: 35px;
+  font-size: 14px;
+  padding: 5px;
+  border: 1px solid rgb(239, 239, 239);
+  border-radius: 3px;
+  outline: none;
+}
+
+.add_new_todo {
+  height: 30px;
+  width: 30px;
+  border-radius: 6px;
+  background-color: #eff2f7;
+  border: 1px solid #dadfe8;
+  color: rgb(99, 109, 149);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 150ms ease-in-out;
+}
+
+.red_btn {
+  color: rgb(221, 123, 123);
+}
+
+.add_new_todo:hover {
+  opacity: 1;
+}
+
+.input_group {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 10px;
+}

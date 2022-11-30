@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from "./ListItem.module.css"
 
-const ListItem = () => {
+const ListItem = ({ data }) => {
   return (
     <div className={styles.item_container}>
-      <input className={styles.checkbox} id="task" type="checkbox" />
-      <label className={styles.item_label} for="task">Task text</label>
+      <input className={styles.checkbox} id={data.id} type="checkbox" />
+      <label className={styles.item_label} htmlFor={data.id}>{data.text}</label>
     </div>
   )
 }

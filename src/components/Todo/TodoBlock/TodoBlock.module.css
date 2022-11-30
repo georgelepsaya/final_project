@@ -1,3 +1,14 @@
+@keyframes appear {
+  0% {
+    opacity: 0%;
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .container {
   background-color: #ffffff;
   border: 1px solid rgb(240, 240, 240);
@@ -6,16 +17,19 @@
   cursor: pointer;
   padding: 5px 15px;
   transition: all 150ms ease-in-out;
+  position: relative;
+  animation: appear;
+  animation-duration: 300ms;
 }
 
 .container:hover {
   box-shadow: 0 0 8px rgba(228, 228, 228, 0.6);
-  transform: scale(1.02);
+  /* transform: scale(1.01); */
 }
 
 .title {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   color: rgba(49, 50, 58, 0.6);
   margin: 3px 0;
   transition: all 150ms ease-in-out;
@@ -23,4 +37,47 @@
 
 .container:hover .title {
   color: rgb(49, 50, 58);
+}
+
+.delete_btn, .edit_btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: all 150ms ease-in-out;
+  border: 1px solid #f3f3f3;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 150ms ease-in-out;
+}
+
+.btn_group {
+  display: flex;
+  position: absolute;
+  display: none;
+  top: 8px;
+  right: 10px;
+  opacity: 0.7;
+  transition: all 150ms ease-in-out;
+}
+
+.container:hover .btn_group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.edit_icon {
+  color: rgb(115, 115, 138);
+}
+
+.delete_icon {
+  color: rgb(221, 123, 123);
+}
+
+.btn_group:hover {
+  opacity: 1;
 }

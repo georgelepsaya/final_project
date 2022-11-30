@@ -11,6 +11,8 @@
 
 .item_label {
   margin-left: 10px;
+  font-size: 14px;
+  cursor: pointer;
 }
 
 .checkbox {
@@ -25,12 +27,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 100ms background-color ease-in-out;
+  transition: 150ms background-color ease-in-out;
 }
 
 .checkbox:hover {
-  background-color: #ededed;
-  transition: 100ms background-color ease-in-out;
+  background-color: #f5f5f5;
 }
 
 .checkbox:checked {

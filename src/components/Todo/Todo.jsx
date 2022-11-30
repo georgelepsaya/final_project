@@ -1,17 +1,59 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import TodoBlock from './TodoBlock/TodoBlock'
+import NewTodoBlock from './NewTodoBlock/NewTodoBlock';
 import styles from "./Todo.module.css"
 
 const Todo = () => {
+
+  const [todoBlocks, setTodoBlocks] = useState([]);
+
+  useEffect(() => {
+    const getTodoBlocks = async () => {
+      const todoBlocks = await fetchData();
+      setTodoBlocks(todoBlocks);
+    }
+    getTodoBlocks();
+  }, [])
+
+  // Fetch Data
+  const fetchData = async () => {
+    const data = await fetch("http://localhost:3000/todo_blocks");
+    const json = await data.json()
+
+    return json;
+  }
+
+  // Delete Todo Block
+  const deleteBlock = async (id) => {
+    await fetch(`http://localhost:3000/todo_blocks/${id}`, {
+      method: "DELETE",
+    })
+
+    setTodoBlocks(todoBlocks.filter(todoBlock => todoBlock.id !== id));
+  }
+
+  // Add Todo Block
+  const addTodoBlock = async (todoBlock) => {
+    const res = await fetch("http://localhost:3000/todo_blocks", {
+      method: "POST",
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(todoBlock)
+    })
+
+    const data = await res.json();
+    setTodoBlocks([...todoBlocks, data]);
+  }
+
   return (
     <div className={styles.container_grid}>
-      <TodoBlock />
-      <TodoBlock />
-      <TodoBlock />
-      <TodoBlock />
-      <TodoBlock />
-      <TodoBlock />
-      <TodoBlock />
+
+      <NewTodoBlock addTodoBlock={addTodoBlock} />
+      {
+        todoBlocks &&
+        todoBlocks.map(block => <TodoBlock key={block.id} data={block} deleteBlock={deleteBlock} />)
+      }
     </div>
   )
 }

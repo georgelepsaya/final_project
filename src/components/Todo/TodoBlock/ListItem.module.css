@@ -13,6 +13,12 @@
   margin-left: 10px;
   font-size: 14px;
   cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: rgb(125, 125, 125);
 }
 
 .checkbox {

@@ -30,7 +30,7 @@ const ListItem = ({ data }) => {
   return (
     <div className={styles.item_container}>
       <input className={styles.checkbox} id={data.id} onChange={() => toggleComplete(data.id)} checked={todoChecked} type="checkbox" />
-      <label className={styles.item_label} htmlFor={data.id}>{data.text}</label>
+      <label className={`${styles.item_label} ${todoChecked && styles.completed}`} htmlFor={data.id}>{data.text}</label>
     </div>
   )
 }

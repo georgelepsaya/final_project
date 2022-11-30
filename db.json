@@ -8,7 +8,7 @@
   "todos": [
     {
       "text": "Write your tasks here 👌",
-      "completed": false,
+      "completed": true,
       "block_id": "0.7451747761164704",
       "temp": 0.4182251136835473,
       "id": 1

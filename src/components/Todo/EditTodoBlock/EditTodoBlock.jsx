@@ -9,7 +9,8 @@ const EditTodoBlock = ({ initialInputs, block,  setIsEditing }) => {
 
   // adding new input
   const onAddInput = () => {
-    setNewInputs(prev => [...prev, {text: "", completed: false, block_id: "", temp: Math.random()}])
+    const temp_id = Math.random();
+    setNewInputs(prev => [...prev, {text: "", completed: false, block_id: "", temp: temp_id}])
   }
 
   // changing text

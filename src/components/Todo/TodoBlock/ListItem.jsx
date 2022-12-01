@@ -14,7 +14,6 @@ const ListItem = ({ data }) => {
   const toggleComplete = async (id) => {
     const todoToToggle = await fetchTodo(id);
     const updTodo = { ...todoToToggle, completed: !todoToToggle.completed };
-    console.log(updTodo);
     await fetch(`http://localhost:3000/todos/${id}`,
       {
         method: "PUT",

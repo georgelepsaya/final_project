@@ -9,11 +9,18 @@ const Todo = () => {
   const [update, setUpdate] = useState(false);
 
   useEffect(() => {
+    let subscribed = true;
     const getTodoBlocks = async () => {
       const todoBlocks = await fetchData();
-      setTodoBlocks(todoBlocks);
+      if (subscribed) {
+        setTodoBlocks(todoBlocks);
+      }
     }
     getTodoBlocks();
+
+    return () => {
+      subscribed = false;
+    }
   }, [update])
 
   // Fetch Data

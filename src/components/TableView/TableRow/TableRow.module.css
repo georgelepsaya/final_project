@@ -1,0 +1,53 @@
+.input_row {
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+}
+
+.editable_field {
+  min-width: 150px;
+}
+
+.centered_item {
+  text-align: center;
+}
+
+.reveal_btn {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  background-color: rgb(241, 245, 248);
+  color: rgb(114, 126, 145);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 12px;
+  transition: all 150ms ease-in-out;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.reveal_btn:hover {
+  opacity: 1;
+}
+
+.description:hover .reveal_btn {
+  display: flex;
+}
+
+.description {
+  position: relative;
+}
+
+.category {
+  padding: 2px 5px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+}

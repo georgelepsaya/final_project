@@ -12,7 +12,7 @@
   "todos": [
     {
       "text": "Write your tasks here 👌",
-      "due": "20 Dec 2022",
+      "due": "2022-12-20",
       "description": "In this amazing app with the most beautiful UI ever you can keep and organize your tasks!",
       "completed": true,
       "block_id": "0.21506229311925296",
@@ -21,7 +21,7 @@
     },
     {
       "text": "Organise them in blocks 📚",
-      "due": "23 Dec 2022",
+      "due": "2022-12-23",
       "description": "Divide your tasks in blocks and keep it clean!",
       "completed": true,
       "block_id": "0.21506229311925296",
@@ -30,7 +30,7 @@
     },
     {
       "text": "Enjoy! 😄",
-      "due": "24 Dec 2022",
+      "due": "2022-12-24",
       "description": "Just enjoy using this amazing app!",
       "completed": false,
       "block_id": "0.21506229311925296",
@@ -39,7 +39,7 @@
     },
     {
       "text": "New task",
-      "completed": true,
+      "completed": false,
       "block_id": "0.21506229311925296",
       "temp": 0.6692436700016957,
       "id": 4

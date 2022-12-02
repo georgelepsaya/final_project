@@ -5,6 +5,7 @@ import Main from "./components/Main/Main";
 import Home from "./pages/Home/Home";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Todo from "./components/Todo/Todo";
+import TableView from "./components/TableView/TableView";
 import ErrorPage from "./error-page";
 import "./index.css";
 
@@ -32,7 +33,7 @@ const router = createHashRouter([
           },
           {
             path: "/dashboard/table-view",
-            element: <div>Table View</div>,
+            element: <TableView />,
           },
           {
             path: "/dashboard/markdown",

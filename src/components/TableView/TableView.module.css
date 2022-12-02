@@ -1,0 +1,18 @@
+.table_main {
+  border: 1px solid;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.table_container {
+  margin: 0 auto;
+}
+
+th, td {
+  border: 1px solid rgb(224, 224, 224);
+  padding: 3px 10px;
+}
+
+th {
+  font-weight: 500;
+}

@@ -49,5 +49,10 @@
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 13px;
+  max-width: 80px;
+}
+
+.category_field {
+  padding: 15px;
 }

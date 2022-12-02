@@ -51,7 +51,7 @@ const TableRow = ({ rowContent, category }) => {
       <td>
         <textarea onKeyUp={handleTextGrow} className={styles.input_row} type="text" value={rowContent.text} />
       </td>
-      <td className={styles.centered_item}>
+      <td className={`${styles.centered_item} ${styles.category_field}`}>
         <span className={styles.category} style={{backgroundColor: `${colorCode}`}}>{category}</span>
       </td>
       <td className={styles.description}>

@@ -7,6 +7,14 @@
     {
       "title": "Personal",
       "id": "0.5228239707683111"
+    },
+    {
+      "title": "New Category",
+      "id": "0.8179156715306268"
+    },
+    {
+      "title": "Another One",
+      "id": "0.4576863452708544"
     }
   ],
   "todos": [
@@ -50,6 +58,27 @@
       "block_id": "0.5228239707683111",
       "temp": 0.6442967626720384,
       "id": 5
+    },
+    {
+      "text": "Testing",
+      "completed": false,
+      "block_id": "0.8179156715306268",
+      "temp": 0.8473495083257647,
+      "id": 6
+    },
+    {
+      "text": "New task",
+      "completed": false,
+      "block_id": "0.4576863452708544",
+      "temp": 0.8085656777700729,
+      "id": 7
+    },
+    {
+      "text": "Another task",
+      "completed": false,
+      "block_id": "0.4576863452708544",
+      "temp": 0.6651271920810027,
+      "id": 8
     }
   ]
 }

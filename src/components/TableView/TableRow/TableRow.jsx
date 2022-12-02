@@ -5,6 +5,24 @@ const TableRow = ({ rowContent, category }) => {
 
   const [reveal, setReveal] = useState(true);
 
+  const [rowData, setRowData] = useState({ ...rowContent });
+
+  const handleChangeDescription = (e) => {
+    setRowData(prev => ({ ...prev, description: e.target.value }))
+  }
+
+  const handleChangeText = (e) => {
+    setRowData(prev => ({...prev, text: e.target.value}))
+  }
+
+  const handleChangeDate = (e) => {
+    setRowData(prev => ({...prev, due: e.target.value}));
+  }
+
+  const handleCheck = () => {
+    setRowData(prev => ({...prev, completed: !prev.completed}))
+  }
+
   const handleTextGrow = (e) => {
     e.target.style.height = "auto";
     let scHeight = e.target.scrollHeight;
@@ -12,10 +30,17 @@ const TableRow = ({ rowContent, category }) => {
   }
 
   const handleReveal = (e) => {
-    e.target.nextElementSibling.style.height = "auto";
-    let scHeight = e.target.nextElementSibling.scrollHeight;
-    e.target.nextElementSibling.style.height = `${scHeight}px`;
-    setReveal(false);
+    if (reveal) {
+      e.target.nextElementSibling.style.height = "auto";
+      let scHeight = e.target.nextElementSibling.scrollHeight;
+      e.target.nextElementSibling.style.height = `${scHeight}px`;
+      setReveal(false);
+    } else {
+      // let offHeight = e.target.nextElementSibling.height;
+      // e.target.nextElementSibling.style.height = `${offHeight}px`;
+      e.target.nextElementSibling.style.height = "auto";
+      setReveal(true);
+    }
   }
 
   const generateCategoryColor = (blockId) => {
@@ -38,18 +63,19 @@ const TableRow = ({ rowContent, category }) => {
     return colorCode;
   }
 
+  // generating coloe for category tag
   const colorCode = generateCategoryColor(rowContent.block_id);
 
   return (
-    <tr key={rowContent.id}>
-      <td className={styles.centered_item}>
-        <input className={styles.input_row} type="checkbox" checked={rowContent.completed} />
+    <tr>
+      <td className={styles.checkbox_field}>
+        <input className={`${styles.checkbox}`} onChange={handleCheck} type="checkbox" checked={rowData.completed} />
       </td>
       <td className={styles.centered_item}>
-        <input className={styles.input_row} type="date" value={rowContent.due} />
+        <input className={styles.input_row} onChange={handleChangeDate} type="date" value={rowData.due} />
       </td>
       <td>
-        <textarea onKeyUp={handleTextGrow} className={styles.input_row} type="text" value={rowContent.text} />
+        <textarea onChange={handleChangeText} onKeyUp={handleTextGrow} className={`${styles.input_row} ${styles.name_field}`} type="text" value={rowData.text} />
       </td>
       <td className={`${styles.centered_item} ${styles.category_field}`}>
         <span className={styles.category} style={{backgroundColor: `${colorCode}`}}>{category}</span>
@@ -58,7 +84,7 @@ const TableRow = ({ rowContent, category }) => {
         <button onClick={handleReveal} className={styles.reveal_btn}>
         {reveal ? "reveal" : "hide"}
         </button>
-        <textarea onKeyUp={handleTextGrow} className={`${styles.input_row} ${styles.editable_field}`} value={rowContent.description} />
+        <textarea onChange={handleChangeDescription} onKeyUp={handleTextGrow} className={`${styles.input_row} ${styles.editable_field}`} value={rowData.description} />
       </td>
     </tr>
   )

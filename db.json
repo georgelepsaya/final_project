@@ -9,12 +9,12 @@
       "id": "0.5228239707683111"
     },
     {
-      "title": "New Category",
-      "id": "0.8179156715306268"
-    },
-    {
       "title": "Another One",
       "id": "0.4576863452708544"
+    },
+    {
+      "title": "My project",
+      "id": "0.5245410324525448"
     }
   ],
   "todos": [
@@ -60,25 +60,39 @@
       "id": 5
     },
     {
-      "text": "Testing",
-      "completed": false,
-      "block_id": "0.8179156715306268",
-      "temp": 0.8473495083257647,
-      "id": 6
-    },
-    {
       "text": "New task",
-      "completed": false,
+      "completed": true,
       "block_id": "0.4576863452708544",
       "temp": 0.8085656777700729,
       "id": 7
     },
     {
       "text": "Another task",
-      "completed": false,
+      "completed": true,
       "block_id": "0.4576863452708544",
       "temp": 0.6651271920810027,
       "id": 8
+    },
+    {
+      "text": "Hide / reveal thing",
+      "completed": false,
+      "block_id": "0.5245410324525448",
+      "temp": 0.06814564448225635,
+      "id": 11
+    },
+    {
+      "text": "Adding new task",
+      "completed": false,
+      "block_id": "0.5245410324525448",
+      "temp": 0.5580517168003274,
+      "id": 12
+    },
+    {
+      "text": "Fix width",
+      "completed": false,
+      "block_id": "0.5245410324525448",
+      "temp": 0.9592678525018576,
+      "id": 13
     }
   ]
 }

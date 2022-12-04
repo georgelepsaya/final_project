@@ -1,26 +1,46 @@
 import React, { useState } from 'react'
 import styles from "./TableRow.module.css"
 
-const TableRow = ({ rowContent, category }) => {
+const TableRow = ({ rowContent, category, setTableRows }) => {
 
   const [reveal, setReveal] = useState(true);
 
   const [rowData, setRowData] = useState({ ...rowContent });
 
   const handleChangeDescription = (e) => {
-    setRowData(prev => ({ ...prev, description: e.target.value }))
+    setRowData(prev => ({ ...prev, description: e.target.value }));
+    setTableRows(prev => {
+      const ind = prev.findIndex(row => row.id === rowContent.id);
+      prev[ind] = { ...prev[ind], description: e.target.value };
+      return prev;
+    });
   }
 
   const handleChangeText = (e) => {
-    setRowData(prev => ({...prev, text: e.target.value}))
+    setRowData(prev => ({ ...prev, text: e.target.value }))
+    setTableRows(prev => {
+      const ind = prev.findIndex(row => row.id === rowContent.id);
+      prev[ind] = { ...prev[ind], text: e.target.value };
+      return prev;
+    });
   }
 
   const handleChangeDate = (e) => {
-    setRowData(prev => ({...prev, due: e.target.value}));
+    setRowData(prev => ({ ...prev, due: e.target.value }));
+    setTableRows(prev => {
+      const ind = prev.findIndex(row => row.id === rowContent.id);
+      prev[ind] = { ...prev[ind], due: e.target.value };
+      return prev;
+    });
   }
 
   const handleCheck = () => {
-    setRowData(prev => ({...prev, completed: !prev.completed}))
+    setRowData(prev => ({ ...prev, completed: !prev.completed }))
+    setTableRows(prev => {
+      const ind = prev.findIndex(row => row.id === rowContent.id);
+      prev[ind] = { ...prev[ind], completed: !rowData.completed };
+      return prev;
+    });
   }
 
   const handleTextGrow = (e) => {
@@ -63,7 +83,7 @@ const TableRow = ({ rowContent, category }) => {
     return colorCode;
   }
 
-  // generating coloe for category tag
+  // generating color for category tag
   const colorCode = generateCategoryColor(rowContent.block_id);
 
   return (
@@ -72,7 +92,7 @@ const TableRow = ({ rowContent, category }) => {
         <input className={`${styles.checkbox}`} onChange={handleCheck} type="checkbox" checked={rowData.completed} />
       </td>
       <td className={styles.centered_item}>
-        <input className={styles.input_row} onChange={handleChangeDate} type="date" value={rowData.due} />
+        <input className={styles.input_row} onChange={handleChangeDate} type="date" value={rowData.due ? rowData.due : ""} />
       </td>
       <td>
         <textarea onChange={handleChangeText} onKeyUp={handleTextGrow} className={`${styles.input_row} ${styles.name_field}`} type="text" value={rowData.text} />

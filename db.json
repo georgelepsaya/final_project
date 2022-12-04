@@ -46,11 +46,13 @@
       "id": 3
     },
     {
-      "text": "New task",
+      "text": "Doing stuff",
       "completed": false,
       "block_id": "0.21506229311925296",
       "temp": 0.6692436700016957,
-      "id": 4
+      "id": 4,
+      "description": "Completed",
+      "due": "2022-12-04"
     },
     {
       "text": "Wash the dishes",
@@ -75,7 +77,7 @@
     },
     {
       "text": "Hide / reveal thing",
-      "completed": false,
+      "completed": true,
       "block_id": "0.5245410324525448",
       "temp": 0.06814564448225635,
       "id": 11
@@ -89,7 +91,7 @@
     },
     {
       "text": "Fix width",
-      "completed": false,
+      "completed": true,
       "block_id": "0.5245410324525448",
       "temp": 0.9592678525018576,
       "id": 13

@@ -42,12 +42,21 @@ const TableView = () => {
     return res;
   }
 
-  const handleSave = () => {
+  const handleSave = async () => {
 
+    for (let row of tableRows) {
+      await fetch(`http://localhost:3000/todos/${row.id}`, {
+        method: "PUT",
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify(row)
+      })
+    }
 
     // frontend save message
     setShowSavedMsg(true);
-    setTimeout(() => setShowSavedMsg(false), 2300)
+    setTimeout(() => setShowSavedMsg(false), 2200)
   }
 
   return (
@@ -70,7 +79,7 @@ const TableView = () => {
               <th>Description</th>
             </tr>
           </thead>
-          {tableRows.length > 0 && <TableBody tableRows={tableRows} blocks={blocks} />}
+          {tableRows.length > 0 && <TableBody setTableRows={setTableRows} tableRows={tableRows} blocks={blocks} />}
         </table>
       </div>
     </div>

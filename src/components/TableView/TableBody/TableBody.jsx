@@ -3,16 +3,16 @@ import TableRow from '../TableRow/TableRow';
 
 const TableBody = ({ tableRows, blocks, setTableRows }) => {
 
-  // useEffect(() => {
-  //   console.log("rows changed");
-  // }, [setRows])
-
   return (
     <tbody>
       {tableRows.map(rowContent => {
-        const category = blocks.find(block => block.id === rowContent.block_id).title;
+        let category = "";
+        if (rowContent.block_id !== "") {
+          const catObj = blocks.find(block => block.id === rowContent.block_id)
+          if (catObj) category = catObj.title;
+        }
         return (
-          <TableRow key={rowContent.id} setTableRows={setTableRows} rowContent={rowContent} category={category} />
+          <TableRow key={rowContent.id ? rowContent.id : rowContent.temp} setTableRows={setTableRows} rowContent={rowContent} category={category} />
         )
       })}
     </tbody>

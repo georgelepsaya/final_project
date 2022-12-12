@@ -42,16 +42,61 @@ const TableView = () => {
     return res;
   }
 
-  const handleSave = async () => {
-
+  const saveCategories = async () => {
+    let ctgs = [];
     for (let row of tableRows) {
-      await fetch(`http://localhost:3000/todos/${row.id}`, {
-        method: "PUT",
-        headers: {
-          'Content-type': 'application/json'
-        },
-        body: JSON.stringify(row)
-      })
+      if (row.block_id === "" && !ctgs.includes(row.block_title)) {
+        ctgs.push(row.block_title);
+      }
+    }
+    for (let ctg of ctgs) {
+      const bid = Math.random().toString();
+      let find_block = undefined;
+      for (let row of tableRows) {
+        if (row.block_title === ctg) {
+          find_block = blocks.find(block => block.title === ctg);
+          if (find_block) {
+            row.block_id = find_block.id;
+          } else {
+            row.block_id = bid;
+          }
+        }
+      }
+      if (!find_block) {
+        await fetch("http://localhost:3000/todo_blocks", {
+          method: "POST",
+          headers: {
+            'Content-type': 'application/json'
+          },
+          body: JSON.stringify({title: ctg, id: bid})
+        })
+        const newBlocks = await fetch("http://localhost:3000/todo_blocks");
+        const blocksData = await newBlocks.json();
+        setBlocks(blocksData);
+      }
+    }
+  }
+
+  const handleSave = async () => {
+    saveCategories();
+    for (let row of tableRows) {
+      if (row.id) {
+        await fetch(`http://localhost:3000/todos/${row.id}`, {
+          method: "PUT",
+          headers: {
+            'Content-type': 'application/json'
+          },
+          body: JSON.stringify(row)
+        })
+      } else {
+        await fetch("http://localhost:3000/todos", {
+          method: "POST",
+          headers: {
+            'Content-type': 'application/json'
+          },
+          body: JSON.stringify(row)
+        })
+      }
     }
 
     // frontend save message

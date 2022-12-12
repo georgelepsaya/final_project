@@ -8,6 +8,9 @@ const Main = () => {
     <div className={styles.main_container}>
       <Navbar />
       <Outlet />
+      <footer className={styles.footer}>
+        &#169; Georgy Lepsaya
+      </footer>
     </div>
   )
 }

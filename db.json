@@ -5,16 +5,8 @@
       "id": "0.21506229311925296"
     },
     {
-      "title": "Personal",
-      "id": "0.5228239707683111"
-    },
-    {
-      "title": "Another One",
-      "id": "0.4576863452708544"
-    },
-    {
-      "title": "My project",
-      "id": "0.5245410324525448"
+      "title": "This app",
+      "id": "0.4003637782872742"
     }
   ],
   "todos": [
@@ -40,61 +32,34 @@
       "text": "Enjoy! 😄",
       "due": "2022-12-24",
       "description": "Just enjoy using this amazing app!",
-      "completed": false,
+      "completed": true,
       "block_id": "0.21506229311925296",
       "temp": 0.2887395736736411,
       "id": 3
     },
     {
-      "text": "Doing stuff",
+      "text": "Add category (block title and id) on table view page",
       "completed": false,
-      "block_id": "0.21506229311925296",
-      "temp": 0.6692436700016957,
+      "block_id": "0.4003637782872742",
+      "temp": 0.2965253181078078,
       "id": 4,
-      "description": "Completed",
-      "due": "2022-12-04"
+      "due": "2022-12-10"
     },
     {
-      "text": "Wash the dishes",
+      "text": "Add task from table view",
       "completed": false,
-      "block_id": "0.5228239707683111",
-      "temp": 0.6442967626720384,
-      "id": 5
+      "block_id": "0.4003637782872742",
+      "temp": 0.623290293298195,
+      "id": 5,
+      "due": "2022-12-10"
     },
     {
-      "text": "New task",
-      "completed": true,
-      "block_id": "0.4576863452708544",
-      "temp": 0.8085656777700729,
-      "id": 7
-    },
-    {
-      "text": "Another task",
-      "completed": true,
-      "block_id": "0.4576863452708544",
-      "temp": 0.6651271920810027,
-      "id": 8
-    },
-    {
-      "text": "Hide / reveal thing",
-      "completed": true,
-      "block_id": "0.5245410324525448",
-      "temp": 0.06814564448225635,
-      "id": 11
-    },
-    {
-      "text": "Adding new task",
+      "text": "Pick date in todo page",
       "completed": false,
-      "block_id": "0.5245410324525448",
-      "temp": 0.5580517168003274,
-      "id": 12
-    },
-    {
-      "text": "Fix width",
-      "completed": true,
-      "block_id": "0.5245410324525448",
-      "temp": 0.9592678525018576,
-      "id": 13
+      "block_id": "0.4003637782872742",
+      "temp": 0.37526845079394744,
+      "id": 6,
+      "due": "2022-12-10"
     }
   ]
 }

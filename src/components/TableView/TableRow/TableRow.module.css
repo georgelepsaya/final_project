@@ -1,3 +1,48 @@
+@keyframes appear {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  80% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 0;
+  }
+}
+
+.container:last-child {
+  position: relative;
+}
+
+.new_btn {
+  display: flex;
+  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 150px;
+  height: 26px;
+  border: none;
+  background-color: rgb(241, 245, 248);
+  color: rgb(114, 126, 145);
+  position: absolute;
+  bottom: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 8px;
+  transition: all 150ms ease-in-out;
+}
+
+.container:last-child:hover .new_btn {
+  animation: appear;
+  animation-duration: 2000ms;
+}
+
 .input_row {
   padding: 5px 10px;
   border: none;
@@ -6,6 +51,19 @@
   overflow: hidden;
   width: 100%;
   font-size: 14px;
+}
+
+.category_input {
+  padding: 2px 5px;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  font-size: 14px;
+  width: 70px;
+  text-align: center;
+  border-radius: 5px;
+  color: rgb(74, 85, 103);
+  border: 1px solid rgb(102, 114, 135);
 }
 
 .name_field {

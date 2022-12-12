@@ -7,6 +7,10 @@ const TableRow = ({ rowContent, category, setTableRows }) => {
 
   const [rowData, setRowData] = useState({ ...rowContent });
 
+  const handleNewRow = () => {
+    setTableRows(prev => [...prev, {text: "", due: "", description: "", completed: false, block_id: "", block_title: "", temp: Math.random()}])
+  }
+
   const handleChangeDescription = (e) => {
     setRowData(prev => ({ ...prev, description: e.target.value }));
     setTableRows(prev => {
@@ -49,6 +53,15 @@ const TableRow = ({ rowContent, category, setTableRows }) => {
     e.target.style.height = `${scHeight}px`;
   }
 
+  const handleSetCategory = (e) => {
+    setRowData(prev => ({ ...prev, block_title: e.target.value }));
+    setTableRows(prev => {
+      const ind = prev.findIndex(row => row.temp === rowContent.temp);
+      prev[ind] = { ...prev[ind], block_title: e.target.value };
+      return prev;
+    })
+  }
+
   const handleReveal = (e) => {
     if (reveal) {
       e.target.nextElementSibling.style.height = "auto";
@@ -87,7 +100,7 @@ const TableRow = ({ rowContent, category, setTableRows }) => {
   const colorCode = generateCategoryColor(rowContent.block_id);
 
   return (
-    <tr>
+    <tr className={styles.container}>
       <td className={styles.checkbox_field}>
         <input className={`${styles.checkbox}`} onChange={handleCheck} type="checkbox" checked={rowData.completed} />
       </td>
@@ -98,7 +111,10 @@ const TableRow = ({ rowContent, category, setTableRows }) => {
         <textarea onChange={handleChangeText} onKeyUp={handleTextGrow} className={`${styles.input_row} ${styles.name_field}`} type="text" value={rowData.text} />
       </td>
       <td className={`${styles.centered_item} ${styles.category_field}`}>
-        <span className={styles.category} style={{backgroundColor: `${colorCode}`}}>{category}</span>
+        { rowContent.block_id !== "" ?
+          <span className={styles.category} style={{ backgroundColor: `${colorCode}` }}>{category}</span> :
+          <input onChange={handleSetCategory} onKeyUp={handleTextGrow} className={styles.category_input} type="text" />
+        }
       </td>
       <td className={styles.description}>
         <button onClick={handleReveal} className={styles.reveal_btn}>
@@ -106,6 +122,7 @@ const TableRow = ({ rowContent, category, setTableRows }) => {
         </button>
         <textarea onChange={handleChangeDescription} onKeyUp={handleTextGrow} className={`${styles.input_row} ${styles.editable_field}`} value={rowData.description} />
       </td>
+      <button onClick={handleNewRow} className={styles.new_btn}>New row</button>
     </tr>
   )
 }

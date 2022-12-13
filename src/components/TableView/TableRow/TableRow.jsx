@@ -14,7 +14,10 @@ const TableRow = ({ rowContent, category, setTableRows }) => {
   const handleChangeDescription = (e) => {
     setRowData(prev => ({ ...prev, description: e.target.value }));
     setTableRows(prev => {
-      const ind = prev.findIndex(row => row.id === rowContent.id);
+      let ind = prev.findIndex(row => row.id === rowContent.id);
+      console.log(ind);
+      if (ind === -1) ind = prev.findIndex(row => row.temp === rowContent.temp);
+      console.log(ind);
       prev[ind] = { ...prev[ind], description: e.target.value };
       return prev;
     });
@@ -23,7 +26,8 @@ const TableRow = ({ rowContent, category, setTableRows }) => {
   const handleChangeText = (e) => {
     setRowData(prev => ({ ...prev, text: e.target.value }))
     setTableRows(prev => {
-      const ind = prev.findIndex(row => row.id === rowContent.id);
+      let ind = prev.findIndex(row => row.id === rowContent.id);
+      if (ind === -1) ind = prev.findIndex(row => row.temp === rowContent.temp);
       prev[ind] = { ...prev[ind], text: e.target.value };
       return prev;
     });
@@ -32,7 +36,8 @@ const TableRow = ({ rowContent, category, setTableRows }) => {
   const handleChangeDate = (e) => {
     setRowData(prev => ({ ...prev, due: e.target.value }));
     setTableRows(prev => {
-      const ind = prev.findIndex(row => row.id === rowContent.id);
+      let ind = prev.findIndex(row => row.id === rowContent.id);
+      if (ind === -1) ind = prev.findIndex(row => row.temp === rowContent.temp);
       prev[ind] = { ...prev[ind], due: e.target.value };
       return prev;
     });
@@ -41,7 +46,8 @@ const TableRow = ({ rowContent, category, setTableRows }) => {
   const handleCheck = () => {
     setRowData(prev => ({ ...prev, completed: !prev.completed }))
     setTableRows(prev => {
-      const ind = prev.findIndex(row => row.id === rowContent.id);
+      let ind = prev.findIndex(row => row.id === rowContent.id);
+      if (ind === -1) ind = prev.findIndex(row => row.temp === rowContent.temp);
       prev[ind] = { ...prev[ind], completed: !rowData.completed };
       return prev;
     });
@@ -56,7 +62,8 @@ const TableRow = ({ rowContent, category, setTableRows }) => {
   const handleSetCategory = (e) => {
     setRowData(prev => ({ ...prev, block_title: e.target.value }));
     setTableRows(prev => {
-      const ind = prev.findIndex(row => row.temp === rowContent.temp);
+      let ind = prev.findIndex(row => row.id === rowContent.id);
+      if (ind === -1) ind = prev.findIndex(row => row.temp === rowContent.temp);
       prev[ind] = { ...prev[ind], block_title: e.target.value };
       return prev;
     })

@@ -79,6 +79,7 @@ const TableView = () => {
 
   const handleSave = async () => {
     saveCategories();
+    console.log(tableRows);
     for (let row of tableRows) {
       if (row.id) {
         await fetch(`http://localhost:3000/todos/${row.id}`, {

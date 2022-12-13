@@ -27,3 +27,38 @@
   font-weight: 500;
   transition: all 150ms ease-in-out;
 }
+
+.small_item {
+  display: none;
+}
+
+@media (max-width: 750px) {
+  .dashmenu_container {
+    flex-direction: row;
+    font-size: 14px;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .small_item {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    max-width: 50px;
+    padding: 2px 5px;
+  }
+  .big_item {
+    display: none;
+  }
+  .menu_item {
+    width: 100%;
+    border: 1px solid rgb(238, 238, 238);
+  }
+  .active_item  {
+    font-weight: 400;
+    transition: none;
+    border: none;
+    border: 1px solid rgba(139, 185, 255, 0.15);
+  }
+}

@@ -8,7 +8,7 @@
 
 @media (max-width: 1130px) {
   .container_grid {
-    grid-template-columns: auto auto;
-    width: 70%;
+    grid-template-columns: auto;
+    width: 100%;
   }
 }

@@ -12,7 +12,12 @@ const DashMenu = () => {
             `${styles.menu_item} ${isActive ? styles.active_item : undefined}`
           }
         >
-          👌&nbsp;&nbsp;ToDo List
+          <span className={styles.big_item}>👌&nbsp;&nbsp;ToDo List</span>
+          <span className={styles.small_item}>
+            👌
+            <br />
+            ToDo
+          </span>
         </NavLink>
       </li>
       <li>
@@ -22,7 +27,12 @@ const DashMenu = () => {
             `${styles.menu_item} ${isActive ? styles.active_item : undefined}`
           }
         >
-          🧠&nbsp;&nbsp;Task Board
+          <span className={styles.big_item}>🧠&nbsp;&nbsp;Task Board</span>
+          <span className={styles.small_item}>
+            🧠
+            <br />
+            Board
+          </span>
         </NavLink>
       </li>
       <li>
@@ -32,7 +42,12 @@ const DashMenu = () => {
             `${styles.menu_item} ${isActive ? styles.active_item : undefined}`
           }
         >
-          📋&nbsp;&nbsp;Table View
+          <span className={styles.big_item}>📋&nbsp;&nbsp;Table View</span>
+          <span className={styles.small_item}>
+            📋
+            <br />
+            Table
+          </span>
         </NavLink>
       </li>
       <li>
@@ -42,7 +57,12 @@ const DashMenu = () => {
             `${styles.menu_item} ${isActive ? styles.active_item : undefined}`
           }
         >
-          📝&nbsp;&nbsp;Markdown
+          <span className={styles.big_item}>📝&nbsp;&nbsp;Markdown</span>
+          <span className={styles.small_item}>
+            📝
+            <br />
+            Notes
+          </span>
         </NavLink>
       </li>
     </ul>

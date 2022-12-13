@@ -76,3 +76,47 @@ ul {
 .dashboard_button:active {
   opacity: 0.5;
 }
+
+@media (max-width: 750px) {
+  .title {
+    display: none;
+  }
+  .button_link {
+    padding: 5px 15px;
+    margin: auto 0;
+    box-shadow: none;
+    border-radius: 7px;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+    transition: none
+  }
+  .home_button, .home_button:hover {
+    border: 1px solid rgb(238, 238, 238);
+    color: #000;
+    box-shadow: none;
+  }
+
+  .home_button:active {
+    opacity: none;
+  }
+
+  .dashboard_button, .dashboard_button:hover {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(238, 238, 238);
+    color: #000;
+    box-shadow: none;
+  }
+
+  .dashboard_button:active {
+    opacity: none;
+  }
+
+  .menu_item {
+    transition: none;
+  }
+
+  .menu_item:hover {
+    transform: none;
+  }
+}

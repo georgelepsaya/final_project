@@ -3,7 +3,7 @@ import TodoBlock from './TodoBlock/TodoBlock'
 import NewTodoBlock from './NewTodoBlock/NewTodoBlock';
 import styles from "./Todo.module.css"
 
-const Todo = () => {
+const Todo = ({ restyle }) => {
 
   const [todoBlocks, setTodoBlocks] = useState([]);
   const [update, setUpdate] = useState(false);
@@ -64,7 +64,7 @@ const Todo = () => {
   }
 
   return (
-    <div className={styles.container_grid}>
+    <div className={styles.container_grid} style={restyle ? restyle : {}}>
 
       <NewTodoBlock addTodoBlock={addTodoBlock} />
       {

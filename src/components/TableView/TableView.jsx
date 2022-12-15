@@ -3,7 +3,7 @@ import TableBody from './TableBody/TableBody';
 import styles from "./TableView.module.css"
 import { FaSave } from 'react-icons/fa';
 
-const TableView = () => {
+const TableView = ({restyle}) => {
   const [tableRows, setTableRows] = useState([]);
   const [blocks, setBlocks] = useState([]);
   const [showSavedMsg, setShowSavedMsg] = useState(false);
@@ -106,7 +106,7 @@ const TableView = () => {
   }
 
   return (
-    <div className={styles.main_container}>
+    <div className={styles.main_container} style={restyle ? restyle : {}}>
       <div className={styles.menu}>
         <h2 className={styles.page_title}>Table View</h2>
         <div className={styles.save_container}>

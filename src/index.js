@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Todo from "./components/Todo/Todo";
 import TableView from "./components/TableView/TableView";
+import Grouped from "./components/Dashboard/Grouped/Grouped";
 import ErrorPage from "./error-page";
 import "./index.css";
 
@@ -23,6 +24,10 @@ const router = createHashRouter([
         path: "dashboard",
         element: <Dashboard />,
         children: [
+          {
+            path: "",
+            element: <Grouped />,
+          },
           {
             path: "/dashboard/todo",
             element: <Todo />,

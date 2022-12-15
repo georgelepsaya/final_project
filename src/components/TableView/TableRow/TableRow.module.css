@@ -19,6 +19,10 @@
   position: relative;
 }
 
+.container {
+  border: 1px solid rgb(224, 224, 224);
+}
+
 .new_btn {
   display: flex;
   visibility: hidden;
@@ -106,6 +110,7 @@
 
 .description {
   position: relative;
+  border: none;
 }
 
 .category {
@@ -142,6 +147,12 @@
 .checkbox:checked {
   background-color: #7bb4ff;
   border: 1px solid #ededed;
+}
+
+.btn_td {
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
 @media (max-width: 750px) {

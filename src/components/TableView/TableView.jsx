@@ -116,7 +116,7 @@ const TableView = () => {
       </div>
       <div className={styles.table_container}>
         <table className={styles.table_main}>
-          <thead>
+          <thead className={styles.table_head}>
             <tr>
               <th>Status</th>
               <th>Due</th>

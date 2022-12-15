@@ -150,7 +150,7 @@ const TableRow = ({ rowContent, category, setTableRows }) => {
         </button>
         <textarea onChange={handleChangeDescription} onKeyUp={handleTextGrow} className={`${styles.input_row} ${styles.editable_field}`} value={rowData.description} />
       </td>
-      <td>
+      <td className={styles.btn_td}>
         <button onClick={handleNewRow} className={styles.new_btn}>New row</button>
       </td>
     </tr>

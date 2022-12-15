@@ -50,6 +50,10 @@ th, td {
   border: 1px solid rgb(224, 224, 224);
 }
 
+th:last-child {
+  border: none;
+}
+
 th {
   font-weight: 500;
   padding: 5px 10px;
@@ -113,6 +117,10 @@ th {
   cursor: default;
 }
 
+.table_head {
+  border: 1px solid rgb(224, 224, 224);
+}
+
 @media (max-width: 750px) {
 
   .table_main:hover {
@@ -120,7 +128,7 @@ th {
   }
 
   .table_main {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .main_container {

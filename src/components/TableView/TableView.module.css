@@ -126,6 +126,9 @@ th {
   .main_container {
     width: 100%;
     margin: 0 auto;
+  }
+
+  .table_container {
     overflow-x: auto;
   }
 

@@ -143,3 +143,21 @@
   background-color: #7bb4ff;
   border: 1px solid #ededed;
 }
+
+@media (max-width: 750px) {
+  .input_row {
+    min-width: 200px;
+  }
+  .category_field {
+    min-width: 100px;
+  }
+  .date_field {
+    min-width: 100px;
+  }
+  .container:last-child .new_btn {
+    animation: none;
+    animation-duration: none;
+    visibility: visible;
+    bottom: -35px;
+  }
+}

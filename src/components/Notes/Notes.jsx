@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import styles from "./Notes.module.css"
 
@@ -58,11 +58,12 @@ const Notes = () => {
           {notesData && notesData.map(block => {
             const color = generateCategoryColor(block.id);
             return (
-              <Link to={block.id} key={block.id} className={styles.cat_list}>
-                <div className={styles.notes_block} style={{ backgroundColor: color }}>
+              <NavLink style={{ backgroundColor: color }} to={block.id} key={block.id} className=
+                {({ isActive }) =>
+                `${isActive ? styles.active_notes_link : undefined} ${styles.cat_list}`
+                }>
                   <p className={styles.block_title}>{block.title}</p>
-                </div>
-              </Link>
+              </NavLink>
             )
           })}
         </div>

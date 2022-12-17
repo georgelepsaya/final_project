@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useFetch } from '../../../hooks/useFetch';
 import styles from "./CategoryNotes.module.css"
@@ -12,8 +12,14 @@ const CategoryNotes = () => {
       {catNotes && catNotes.map(note => {
         return (
           <div key={note.id} className={styles.note_container}>
-            <p>{note.title}</p>
-            <p>{note.date}</p>
+            <div className={styles.upper_notes}>
+              <div className={styles.info_notes}>
+                <p className={styles.notes_title}>{note.title}</p>
+                <p className={styles.notes_date}>{note.date}</p>
+              </div>
+              <p className={styles.words_count}>{note.text.split(" ").length} words</p>
+            </div>
+            <p>{note.description}</p>
           </div>
         )
       })}

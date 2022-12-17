@@ -90,7 +90,8 @@
       "category": "Example",
       "cat_id": "0.011708250694062228",
       "title": "Take notes!",
-      "text": "Write your notes here 👌",
+      "description": "Write your notes here 👌",
+      "text": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       "date": "2022-12-16"
     },
     {
@@ -98,7 +99,8 @@
       "category": "Example",
       "cat_id": "0.011708250694062228",
       "title": "Separate them!",
-      "text": "Organise them in blocks 📚",
+      "description": "Organise them in blocks 📚",
+      "text": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       "date": "2022-12-16"
     },
     {
@@ -106,7 +108,8 @@
       "category": "Study",
       "cat_id": "0.6676418315256207",
       "title": "Study notes!",
-      "text": "Your studying notes here 📚",
+      "description": "Your, studying notes here 📚",
+      "text": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       "date": "2022-12-16"
     }
   ]

@@ -7,6 +7,8 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Todo from "./components/Todo/Todo";
 import TableView from "./components/TableView/TableView";
 import Grouped from "./components/Dashboard/Grouped/Grouped";
+import Notes from "./components/Notes/Notes";
+import CategoryNotes from "./components/Notes/CategoryNotes/CategoryNotes";
 import ErrorPage from "./error-page";
 import "./index.css";
 
@@ -42,7 +44,13 @@ const router = createHashRouter([
           },
           {
             path: "/dashboard/markdown",
-            element: <div>Markdown</div>,
+            element: <Notes />,
+            children: [
+              {
+                path: ":blockId",
+                element: <CategoryNotes />,
+              },
+            ],
           },
         ],
       },

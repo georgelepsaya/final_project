@@ -57,7 +57,7 @@
       "text": "Fix the grid",
       "due": "2022-12-15",
       "description": "",
-      "completed": false,
+      "completed": true,
       "block_id": "0.4003637782872742",
       "block_title": "This app",
       "temp": 0.44805908411632256,
@@ -72,6 +72,42 @@
       "block_title": "This app",
       "temp": 0.6731389167823938,
       "id": 7
+    }
+  ],
+  "notes_blocks": [
+    {
+      "title": "Example",
+      "id": "0.011708250694062228"
+    },
+    {
+      "title": "Study",
+      "id": "0.6676418315256207"
+    }
+  ],
+  "notes": [
+    {
+      "id": 1,
+      "category": "Example",
+      "cat_id": "0.011708250694062228",
+      "title": "Take notes!",
+      "text": "Write your notes here 👌",
+      "date": "2022-12-16"
+    },
+    {
+      "id": 2,
+      "category": "Example",
+      "cat_id": "0.011708250694062228",
+      "title": "Separate them!",
+      "text": "Organise them in blocks 📚",
+      "date": "2022-12-16"
+    },
+    {
+      "id": 3,
+      "category": "Study",
+      "cat_id": "0.6676418315256207",
+      "title": "Study notes!",
+      "text": "Your studying notes here 📚",
+      "date": "2022-12-16"
     }
   ]
 }

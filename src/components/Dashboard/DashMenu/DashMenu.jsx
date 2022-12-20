@@ -1,8 +1,11 @@
 import React from 'react'
 import styles from "./DashMenu.module.css"
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 
 const DashMenu = () => {
+
+  const path = useLocation();
+
   return (
     <ul className={styles.dashmenu_container}>
       <li>
@@ -52,9 +55,9 @@ const DashMenu = () => {
       </li>
       <li>
         <NavLink
-          to="markdown"
+          to="markdown/all"
           className={({ isActive }) =>
-            `${styles.menu_item} ${isActive ? styles.active_item : undefined}`
+            `${styles.menu_item} ${(isActive || path.pathname.includes("/markdown")) ? styles.active_item : undefined}`
           }
         >
           <span className={styles.big_item}>📝&nbsp;&nbsp;Markdown</span>

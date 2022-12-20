@@ -9,7 +9,7 @@ const Navbar = () => {
         <li className={styles.menu_item}>
           <Link className={`${styles.home_button} ${styles.button_link} ${styles.link}`} to="/">🏠&nbsp;&nbsp;&nbsp;Home</Link>
         </li>
-        <li className={styles.title}>🗒&nbsp;&nbsp;No time for Notion</li>
+        <li className={styles.title}>🗒&nbsp;&nbsp;NotNotion</li>
         <li className={styles.menu_item}>
           <Link className={`${styles.dashboard_button} ${styles.button_link} ${styles.link}`} to="/dashboard">📒&nbsp;&nbsp;&nbsp;Dashboard</Link>
         </li>

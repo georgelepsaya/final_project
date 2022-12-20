@@ -55,6 +55,12 @@ const Notes = () => {
       <p className={styles.cat_text}>Categories</p>
       <div className={styles.notes_container_grid}>
         <div className={styles.container}>
+          <NavLink style={{ backgroundColor: "#00000010" }} to="all" key="all_cat" className=
+            {({ isActive }) =>
+              `${isActive ? styles.active_notes_link : undefined} ${styles.cat_list}`
+            }>
+              <p className={styles.block_title}>All</p>
+          </NavLink>
           {notesData && notesData.map(block => {
             const color = generateCategoryColor(block.id);
             return (

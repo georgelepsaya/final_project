@@ -57,7 +57,7 @@
       "text": "Fix the grid",
       "due": "2022-12-15",
       "description": "",
-      "completed": true,
+      "completed": false,
       "block_id": "0.4003637782872742",
       "block_title": "This app",
       "temp": 0.44805908411632256,

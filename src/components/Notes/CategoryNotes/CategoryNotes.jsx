@@ -5,7 +5,13 @@ import styles from "./CategoryNotes.module.css"
 
 const CategoryNotes = () => {
   const { blockId } = useParams();
-  const { data: catNotes } = useFetch({ url: `http://localhost:3000/notes?cat_id=${blockId}` });
+  let urlVal;
+  if (blockId === "all") {
+    urlVal = "http://localhost:3000/notes";
+  } else {
+    urlVal = `http://localhost:3000/notes?cat_id=${blockId}`;
+  }
+  const { data: catNotes } = useFetch({ url: urlVal });
 
   return (
     <div className={styles.notes_container}>

@@ -1,0 +1,18 @@
+.single_note_container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.single_note_container h1 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.single_note_container .descr_txt {
+  font-weight: 500;
+}
+
+.single_note_container article {
+  margin-top: 20px;
+}

@@ -10,10 +10,10 @@ const SingleNote = () => {
   return (
     <>
       {notesData &&
-        <div>
+        <div className={styles.single_note_container}>
           <h1>{notesData.title}</h1>
-          <p>{notesData.description}</p>
-          <p>{notesData.text}</p>
+          <p><span className={styles.descr_txt}>Description:</span> {notesData.description}</p>
+          <article>{notesData.text}</article>
         </div>
       }
     </>

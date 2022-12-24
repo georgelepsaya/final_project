@@ -45,7 +45,7 @@ const Notes = () => {
       }
       colorCode += res;
     }
-    colorCode += "20";
+    colorCode += "25";
     return colorCode;
   }
 
@@ -55,7 +55,7 @@ const Notes = () => {
       <p className={styles.cat_text}>Categories</p>
       <div className={styles.notes_container_grid}>
         <div className={styles.container}>
-          <NavLink style={{ backgroundColor: "#00000010" }} to="all" key="all_cat" className=
+          <NavLink style={{ backgroundColor: "#00000010", boxShadow: "0 0 8px #00000010" }} to="all" key="all_cat" className=
             {({ isActive }) =>
               `${isActive ? styles.active_notes_link : undefined} ${styles.cat_list}`
             }>
@@ -64,7 +64,7 @@ const Notes = () => {
           {notesData && notesData.map(block => {
             const color = generateCategoryColor(block.id);
             return (
-              <NavLink style={{ backgroundColor: color }} to={block.id} key={block.id} className=
+              <NavLink style={{ backgroundColor: color, boxShadow: `0 0 8px ${color}` }} to={block.id} key={block.id} className=
                 {({ isActive }) =>
                 `${isActive ? styles.active_notes_link : undefined} ${styles.cat_list}`
                 }>

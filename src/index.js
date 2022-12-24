@@ -9,6 +9,7 @@ import TableView from "./components/TableView/TableView";
 import Grouped from "./components/Dashboard/Grouped/Grouped";
 import Notes from "./components/Notes/Notes";
 import CategoryNotes from "./components/Notes/CategoryNotes/CategoryNotes";
+import SingleNote from "./components/Notes/SingleNote/SingleNote";
 import ErrorPage from "./error-page";
 import "./index.css";
 
@@ -31,24 +32,33 @@ const router = createHashRouter([
             element: <Grouped />,
           },
           {
-            path: "/dashboard/todo",
+            path: "todo",
             element: <Todo />,
           },
           {
-            path: "/dashboard/task-board",
+            path: "task-board",
             element: <div>Task Board</div>,
           },
           {
-            path: "/dashboard/table-view",
+            path: "table-view",
             element: <TableView />,
           },
           {
-            path: "/dashboard/markdown",
+            path: "markdown",
             element: <Notes />,
             children: [
               {
                 path: ":blockId",
                 element: <CategoryNotes />,
+              },
+            ],
+          },
+          {
+            path: "notes",
+            children: [
+              {
+                path: ":noteId",
+                element: <SingleNote />,
               },
             ],
           },

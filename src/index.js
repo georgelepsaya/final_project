@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createHashRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, Outlet, RouterProvider } from "react-router-dom";
 import Main from "./components/Main/Main";
 import Home from "./pages/Home/Home";
 import Dashboard from "./pages/Dashboard/Dashboard";
@@ -12,6 +12,7 @@ import CategoryNotes from "./components/Notes/CategoryNotes/CategoryNotes";
 import SingleNote from "./components/Notes/SingleNote/SingleNote";
 import ErrorPage from "./error-page";
 import "./index.css";
+import EditSingleNote from "./components/Notes/EditSingleNote/EditSingleNote";
 
 const router = createHashRouter([
   {
@@ -55,12 +56,17 @@ const router = createHashRouter([
           },
           {
             path: "notes",
+            element: <Outlet />,
             children: [
               {
                 path: ":noteId",
                 element: <SingleNote />,
               },
             ],
+          },
+          {
+            path: "notes/:noteId/edit",
+            element: <EditSingleNote />,
           },
         ],
       },

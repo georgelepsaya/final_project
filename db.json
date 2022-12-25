@@ -5,8 +5,8 @@
       "id": "0.21506229311925296"
     },
     {
-      "title": "This app",
-      "id": "0.4003637782872742"
+      "title": "New features",
+      "id": "0.0012135188596738011"
     }
   ],
   "todos": [
@@ -38,40 +38,34 @@
       "id": 3
     },
     {
-      "text": "Add category (block title and id) on table view page",
-      "completed": true,
-      "block_id": "0.4003637782872742",
-      "temp": 0.2965253181078078,
-      "id": 4,
-      "due": "2022-12-12"
-    },
-    {
-      "text": "Add task from table view",
-      "completed": true,
-      "block_id": "0.4003637782872742",
-      "temp": 0.623290293298195,
-      "id": 5,
-      "due": "2022-12-10"
-    },
-    {
-      "text": "Fix the grid",
-      "due": "2022-12-15",
+      "text": "Add category of notes in markdown",
+      "due": "2022-12-26",
       "description": "",
       "completed": false,
-      "block_id": "0.4003637782872742",
-      "block_title": "This app",
-      "temp": 0.44805908411632256,
-      "id": 6
+      "block_id": "0.0012135188596738011",
+      "block_title": "New features",
+      "temp": 0.358420824712234,
+      "id": 8
     },
     {
-      "text": "Fix the table border and shadow",
-      "due": "2022-12-15",
+      "text": "Save changes to a database",
+      "due": "2022-12-26",
       "description": "",
-      "completed": true,
-      "block_id": "0.4003637782872742",
-      "block_title": "This app",
-      "temp": 0.6731389167823938,
-      "id": 7
+      "completed": false,
+      "block_id": "0.0012135188596738011",
+      "block_title": "New features",
+      "temp": 0.661446404762029,
+      "id": 9
+    },
+    {
+      "text": "Adding category from editing a note",
+      "due": "2022-12-26",
+      "description": "",
+      "completed": false,
+      "block_id": "0.0012135188596738011",
+      "block_title": "New features",
+      "temp": 0.07402096707399175,
+      "id": 10
     }
   ],
   "notes_blocks": [

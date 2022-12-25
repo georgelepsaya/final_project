@@ -10,9 +10,7 @@ const EditForm = ({ noteData, noteId }) => {
   const [text, setText] = useState(noteData.text);
   const [date, setDate] = useState(noteData.date);
 
-  const handleSubmit = () => {
-    console.log("Save changes");
-  }
+  const [showSavedMsg, setShowSavedMsg] = useState(false);
 
   const handleChangeTitle = (e) => {
     setTitle(e.target.value);
@@ -34,11 +32,27 @@ const EditForm = ({ noteData, noteId }) => {
     setDate(e.target.value);
   }
 
+  const handleSubmit = async () => {
+    const updNote = {...noteData, title: title, description: description, category: category, text: text, date: date}
+    await fetch(`http://localhost:3000/notes/${noteId}`, {
+      method: "PUT",
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(updNote)
+    });
+    setShowSavedMsg(true);
+    setTimeout(() => setShowSavedMsg(false), 1000)
+  }
+
   return (
     <form className={styles.single_note_container} onSubmit={handleSubmit}>
           <div className={styles.info_container}>
-            <NavLink to={`/dashboard/notes/${noteId}`} className={styles.back_link}>Back</NavLink>
-            <button type="submit" className={styles.save_form_btn}>Save</button>
+        <NavLink to={`/dashboard/notes/${noteId}`} className={styles.back_link}>Back</NavLink>
+        <div>
+          {showSavedMsg && <span className={styles.saved_msg}>Saved changes!</span>}
+          <button type="submit" disabled={showSavedMsg} className={styles.save_form_btn}>Save</button>
+        </div>
           </div>
           <div className={styles.info}>
             <input onChange={handleChangeTitle} className={styles.edit_note_title} type="text" value={title} />

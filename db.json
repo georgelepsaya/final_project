@@ -66,6 +66,26 @@
       "block_title": "New features",
       "temp": 0.07402096707399175,
       "id": 10
+    },
+    {
+      "text": "Add global state management to show/hide some components and implement a dark theme",
+      "due": "",
+      "description": "",
+      "completed": false,
+      "block_id": "0.0012135188596738011",
+      "block_title": "New features",
+      "temp": 0.613909535587603,
+      "id": 11
+    },
+    {
+      "text": "Add global state management to show/hide some components and implement a dark theme",
+      "due": "2022-12-26",
+      "description": "",
+      "completed": false,
+      "block_id": "0.0012135188596738011",
+      "block_title": "New features",
+      "temp": 0.613909535587603,
+      "id": 12
     }
   ],
   "notes_blocks": [
@@ -84,7 +104,7 @@
       "category": "Example",
       "cat_id": "0.011708250694062228",
       "title": "Take notes!",
-      "description": "Write your notes here 👌",
+      "description": "Write your notes here",
       "text": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       "date": "2022-12-16"
     },

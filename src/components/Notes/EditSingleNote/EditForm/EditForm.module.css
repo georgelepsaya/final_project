@@ -50,6 +50,11 @@
   opacity: 1;
 }
 
+.single_note_container .save_form_btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
 .single_note_container .back_link {
   text-decoration: none;
   color: #fff;
@@ -98,4 +103,35 @@
   border-radius: 7px;
   outline: none;
   min-height: 400px;
+}
+
+@keyframes save_message {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.saved_msg {
+  opacity: 0;
+  background-color: rgb(201, 243, 213);
+  color: rgb(94, 152, 112);
+  padding: 3px 15px;
+  text-align: center;
+  margin-right: 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  animation: save_message;
+  animation-duration: 1000ms;
 }

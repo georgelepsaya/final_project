@@ -8,7 +8,9 @@ const NoteLink = ({note}) => {
   const [mousePos, setMousePos] = useState([]);
 
   useEffect(() => {
-    const handleClickOuside = () => setShowMenu(false);
+    const handleClickOuside = () => {
+      setShowMenu(false);
+    }
     window.addEventListener('click', handleClickOuside);
   }, [])
 

@@ -40,7 +40,8 @@ const NewForm = ({ categories }) => {
     setDate(e.target.value);
   }
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     let catId = "";
     categories.forEach(cat => {
       if (cat.title === category) {

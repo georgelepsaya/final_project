@@ -32,7 +32,8 @@ const EditForm = ({ noteData, noteId }) => {
     setDate(e.target.value);
   }
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     const updNote = {...noteData, title: title, description: description, category: category, text: text, date: date}
     await fetch(`http://localhost:3000/notes/${noteId}`, {
       method: "PUT",

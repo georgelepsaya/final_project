@@ -13,6 +13,7 @@ import SingleNote from "./components/Notes/SingleNote/SingleNote";
 import ErrorPage from "./error-page";
 import "./index.css";
 import EditSingleNote from "./components/Notes/EditSingleNote/EditSingleNote";
+import NewSingleNote from "./components/Notes/NewSingleNote/NewSingleNote";
 
 const router = createHashRouter([
   {
@@ -67,6 +68,10 @@ const router = createHashRouter([
           {
             path: "notes/:noteId/edit",
             element: <EditSingleNote />,
+          },
+          {
+            path: "notes/:noteBlock/new",
+            element: <NewSingleNote />,
           },
         ],
       },

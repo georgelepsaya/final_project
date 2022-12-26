@@ -6,36 +6,21 @@
   margin: 0 auto;
 }
 
-.note_container {
+.new_note_container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
   text-decoration: none;
-  color: #000;
   padding: 10px;
   border: 1px solid rgb(237, 240, 243);
   border-radius: 8px;
+  color: rgba(66, 71, 78, 0.7);
+  opacity: 0.7;
   cursor: pointer;
   transition: all 150ms ease-in-out;
 }
 
-.note_container:hover {
-  box-shadow: 0px 2px 8px rgba(155, 155, 155, 0.146);
-}
-
-.notes_title {
-  font-weight: 500;
-}
-
-.notes_date {
-  color: #737373;
-}
-
-.words_count {
-  font-size: 14px;
-  color: #868686;
-}
-
-.upper_notes {
-  display: flex;
-  justify-content: space-between;
+.new_note_container:hover {
+  opacity: 1;
 }

@@ -1,8 +1,7 @@
 import React from 'react'
-import { NavLink, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useFetch } from '../../../hooks/useFetch'
 import EditForm from './EditForm/EditForm'
-import styles from "./EditSingleNote.module.css"
 
 const EditSingleNote = () => {
   

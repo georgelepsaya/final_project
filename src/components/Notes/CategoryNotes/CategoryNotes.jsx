@@ -1,7 +1,9 @@
-import React from 'react'
+import React from 'react';
+import { FaPlus } from 'react-icons/fa';
 import { NavLink, useParams } from 'react-router-dom'
 import { useFetch } from '../../../hooks/useFetch';
 import styles from "./CategoryNotes.module.css"
+import NoteLink from './NoteLink/NoteLink';
 
 const CategoryNotes = () => {
   const { blockId } = useParams();
@@ -15,18 +17,12 @@ const CategoryNotes = () => {
 
   return (
     <div className={styles.notes_container}>
+      <NavLink to={`/dashboard/notes/${blockId}/new`} className={styles.new_note_container}>
+        <FaPlus />&nbsp;&nbsp;&nbsp;New Note
+      </NavLink>
       {catNotes && catNotes.map(note => {
         return (
-          <NavLink to={`/dashboard/notes/${note.id}`} key={note.id} className={styles.note_container}>
-            <div className={styles.upper_notes}>
-              <div className={styles.info_notes}>
-                <p className={styles.notes_title}>{note.title}</p>
-                <p className={styles.notes_date}>{note.date}</p>
-              </div>
-              <p className={styles.words_count}>{note.text.split(" ").length} words</p>
-            </div>
-            <p>{note.description}</p>
-          </NavLink>
+          <NoteLink note={note} key={note.id} />
         )
       })}
     </div>

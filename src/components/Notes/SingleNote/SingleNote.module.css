@@ -31,6 +31,7 @@
 .single_note_container .info_container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .single_note_container .edit_link {
@@ -47,5 +48,21 @@
 }
 
 .single_note_container .edit_link:hover {
+  opacity: 1;
+}
+
+.single_note_container .back_link {
+  background-color: rgb(49, 54, 67);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  border-radius: 7px;
+  opacity: 0.8;
+  transition: all 150ms ease-in-out;
+}
+
+.single_note_container .back_link:hover {
   opacity: 1;
 }

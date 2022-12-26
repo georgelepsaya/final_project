@@ -1,0 +1,29 @@
+.context_menu_container {
+  position: absolute;
+  right: 0;
+  width: 150px;
+  padding: 6px 4px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(241, 241, 241);
+  border-radius: 7px;
+}
+
+.context_menu_container .action {
+  padding: 2px 5px;
+  border-radius: 4px;
+  transition: all 150ms ease-in-out;
+}
+
+.context_menu_container .edit {
+  margin-bottom: 3px;
+}
+
+.context_menu_container .delete:hover {
+  background-color: rgba(248, 197, 197, 0.5);
+  cursor: pointer;
+}
+
+.context_menu_container .edit:hover {
+  background-color: rgba(195, 236, 253, 0.5);
+  cursor: pointer;
+}

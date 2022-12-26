@@ -1,0 +1,137 @@
+.single_note_container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.single_note_container .edit_note_title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  border: none;
+  outline: none;
+}
+
+.single_note_container .descr_cont {
+  color: rgb(81, 90, 106);
+}
+
+.single_note_container .descr_txt {
+  font-weight: 500;
+}
+
+.single_note_container article {
+  margin-top: 20px;
+  text-align: justify;
+}
+
+.single_note_container .info_container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.single_note_container .save_form_btn {
+  text-decoration: none;
+  color: #fff;
+  border: none;
+  background-color: rgb(64, 105, 210);
+  cursor: pointer;
+  opacity: 0.8;
+  height: 30px;
+  width: 70px;
+  text-align: center;
+  font-size: 14px;
+  padding: 2px 8px;
+  border-radius: 7px;
+  transition: all 150ms ease-in-out;
+}
+
+.single_note_container .save_form_btn:hover {
+  opacity: 1;
+}
+
+.single_note_container .save_form_btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.single_note_container .back_link {
+  text-decoration: none;
+  color: #fff;
+  background-color: rgb(49, 54, 67);
+  opacity: 0.8;
+  height: 30px;
+  width: 70px;
+  text-align: center;
+  padding: 2px 8px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  transition: all 150ms ease-in-out;
+}
+
+.single_note_container .back_link:hover {
+  opacity: 1;
+}
+
+.single_note_container .date_pick {
+  display: block;
+  border: none;
+  color: rgb(107, 107, 107);
+  font-size: 14px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.single_note_container .descr_input {
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  font-size: 15px;
+  width: 70%;
+}
+
+.single_note_container .note_text_field {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 15px;
+  resize: none;
+  padding: 8px 10px;
+  border: 1px solid rgb(214, 214, 214);
+  border-radius: 7px;
+  outline: none;
+  min-height: 400px;
+}
+
+@keyframes save_message {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.saved_msg {
+  opacity: 0;
+  background-color: rgb(201, 243, 213);
+  color: rgb(94, 152, 112);
+  padding: 3px 15px;
+  text-align: center;
+  margin-right: 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  animation: save_message;
+  animation-duration: 1000ms;
+}

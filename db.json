@@ -112,8 +112,8 @@
       "id": 2,
       "category": "Example",
       "cat_id": "0.011708250694062228",
-      "title": "Separate them!",
-      "description": "Organise them in blocks 📚",
+      "title": "Separate them",
+      "description": "Organise them in blocks",
       "text": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       "date": "2022-12-16"
     },
@@ -125,6 +125,33 @@
       "description": "Your, studying notes here 📚",
       "text": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       "date": "2022-12-16"
+    },
+    {
+      "id": 0.33567268013284335,
+      "title": "New Note",
+      "description": "pwoeri",
+      "category": "Example",
+      "cat_id": "0.011708250694062228",
+      "text": "sfgdgdsgfsdg",
+      "date": ""
+    },
+    {
+      "id": 0.49320038469319116,
+      "title": "New 1",
+      "description": "sdfsf",
+      "category": "Example",
+      "cat_id": "0.011708250694062228",
+      "text": "sdfsdfsdf sdf sdfs fg dfg df",
+      "date": "2022-12-14"
+    },
+    {
+      "id": 0.9426245119285002,
+      "title": "dfgdfg",
+      "description": "dfgdf",
+      "category": "Example",
+      "cat_id": "0.011708250694062228",
+      "text": "dfsgsdfg",
+      "date": "2022-12-02"
     }
   ]
 }

@@ -31,7 +31,7 @@ const NoteLink = ({note, notes, setCatNotes}) => {
         </div>
         <p>{note.description}</p>
       </NavLink>
-      {showMenu && <ContextMenu noteId={note.id} mousePos={mousePos} notes={notes} setCatNotes={setCatNotes} />}
+      {showMenu && <ContextMenu note={note} mousePos={mousePos} notes={notes} setCatNotes={setCatNotes} />}
     </>
   )
 }

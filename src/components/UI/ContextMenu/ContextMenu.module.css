@@ -16,6 +16,9 @@
 
 .context_menu_container .edit {
   margin-bottom: 3px;
+  text-decoration: none;
+  display: block;
+  color: #000;
 }
 
 .context_menu_container .delete:hover {

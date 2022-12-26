@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import ContextMenu from '../../../UI/ContextMenu/ContextMenu';
 import styles from "./NoteLink.module.css"
 
-const NoteLink = ({note}) => {
+const NoteLink = ({note, notes, setCatNotes}) => {
   const [showMenu, setShowMenu] = useState(false);
   const [mousePos, setMousePos] = useState([]);
 
@@ -31,7 +31,7 @@ const NoteLink = ({note}) => {
         </div>
         <p>{note.description}</p>
       </NavLink>
-      {showMenu && <ContextMenu mousePos={mousePos} />}
+      {showMenu && <ContextMenu noteId={note.id} mousePos={mousePos} notes={notes} setCatNotes={setCatNotes} />}
     </>
   )
 }

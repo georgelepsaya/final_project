@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { FaPlus } from 'react-icons/fa';
 import { NavLink, useParams } from 'react-router-dom'
 import { useFetch } from '../../../hooks/useFetch';
@@ -13,7 +13,12 @@ const CategoryNotes = () => {
   } else {
     urlVal = `http://localhost:3000/notes?cat_id=${blockId}`;
   }
-  const { data: catNotes } = useFetch({ url: urlVal });
+
+  const { data: notes } = useFetch({ url: urlVal });
+  const [catNotes, setCatNotes] = useState(notes);
+  useEffect(() => {
+    setCatNotes(notes);
+  }, [notes])
 
   return (
     <div className={styles.notes_container}>
@@ -22,7 +27,7 @@ const CategoryNotes = () => {
       </NavLink>
       {catNotes && catNotes.map(note => {
         return (
-          <NoteLink note={note} key={note.id} />
+          <NoteLink note={note} key={note.id} notes={catNotes} setCatNotes={setCatNotes} />
         )
       })}
     </div>

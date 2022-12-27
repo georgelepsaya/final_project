@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
+import CategoryBlock from './CategoryBlock/CategoryBlock';
 import styles from "./Notes.module.css"
 
 const Notes = () => {
@@ -71,21 +71,11 @@ const Notes = () => {
       <p className={styles.cat_text}>Categories</p>
       <div className={styles.notes_container_grid}>
         <div className={styles.container}>
-          <NavLink style={{ backgroundColor: "#00000010", boxShadow: "0 0 8px #00000010" }} to="all" key="all_cat" className=
-            {({ isActive }) =>
-              `${isActive ? styles.active_notes_link : undefined} ${styles.cat_list}`
-            }>
-              <p className={styles.block_title}>All</p>
-          </NavLink>
+          <CategoryBlock key={"all"} color={"#00000010"} block={{id: "all", title: "All"}} />
           {notesData && notesData.map(block => {
             const color = generateCategoryColor(block.id);
             return (
-              <NavLink style={{ backgroundColor: color, boxShadow: `0 0 8px ${color}` }} to={block.id} key={block.id} className=
-                {({ isActive }) =>
-                `${isActive ? styles.active_notes_link : undefined} ${styles.cat_list}`
-                }>
-                  <p className={styles.block_title}>{block.title}</p>
-              </NavLink>
+              <CategoryBlock key={block.id} category={block} notesData={notesData} setNotesData={setNotesData} color={color} block={block} />
             )
           })}
           {catIsEditing ?

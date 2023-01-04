@@ -4,6 +4,7 @@ import CategoryBlock from './CategoryBlock/CategoryBlock';
 import styles from "./Notes.module.css"
 
 const Notes = () => {
+
   const [notesData, setNotesData] = useState([]);
   const [newCategoryTitle, setNewCategoryTitle] = useState("");
   const [catIsEditing, setCatIsEditing] = useState(false);
@@ -47,7 +48,6 @@ const Notes = () => {
       }
       colorCode += res;
     }
-    colorCode += "25";
     return colorCode;
   }
 
@@ -71,7 +71,7 @@ const Notes = () => {
       <p className={styles.cat_text}>Categories</p>
       <div className={styles.notes_container_grid}>
         <div className={styles.container}>
-          <CategoryBlock key={"all"} color={"#00000010"} block={{id: "all", title: "All"}} />
+          <CategoryBlock key={"all"} color={"#6e6e6e"} block={{id: "all", title: "All"}} />
           {notesData && notesData.map(block => {
             const color = generateCategoryColor(block.id);
             return (

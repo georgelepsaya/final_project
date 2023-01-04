@@ -7,6 +7,10 @@
     {
       "title": "New features",
       "id": "0.0012135188596738011"
+    },
+    {
+      "title": "Bugs",
+      "id": "0.3078441361898345"
     }
   ],
   "todos": [
@@ -69,16 +73,6 @@
     },
     {
       "text": "Add global state management to show/hide some components and implement a dark theme",
-      "due": "",
-      "description": "",
-      "completed": false,
-      "block_id": "0.0012135188596738011",
-      "block_title": "New features",
-      "temp": 0.613909535587603,
-      "id": 11
-    },
-    {
-      "text": "Add global state management to show/hide some components and implement a dark theme",
       "due": "2022-12-26",
       "description": "",
       "completed": false,
@@ -86,45 +80,46 @@
       "block_title": "New features",
       "temp": 0.613909535587603,
       "id": 12
+    },
+    {
+      "text": "Fix adding multiple notes from \"new\" form",
+      "due": "",
+      "description": "Only one note should be added, when save is pressed in the new form",
+      "completed": false,
+      "block_id": "0.3078441361898345",
+      "block_title": "Bugs",
+      "temp": 0.5738439186721598,
+      "id": 13
     }
   ],
   "notes_blocks": [
     {
-      "title": "Example",
-      "id": "0.011708250694062228"
+      "title": "new category",
+      "id": "0.2428710082612775"
     },
     {
-      "title": "Study",
-      "id": "0.6676418315256207"
+      "title": "another",
+      "id": "0.5469818185471635"
     }
   ],
   "notes": [
     {
-      "id": 1,
-      "category": "Example",
-      "cat_id": "0.011708250694062228",
-      "title": "Take notes!",
-      "description": "Write your notes here",
-      "text": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      "date": "2022-12-16"
+      "id": 0.23829321635118106,
+      "title": "New note",
+      "description": "This is an example",
+      "category": "new category",
+      "cat_id": "0.2428710082612775",
+      "text": "Example note here!",
+      "date": "2022-12-28"
     },
     {
-      "id": 2,
-      "category": "Example",
-      "cat_id": "0.011708250694062228",
-      "title": "Separate them",
-      "description": "Organise them in blocks",
-      "text": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      "date": "2022-12-16"
-    },
-    {
-      "id": 3,
-      "category": "Study",
-      "cat_id": "0.6676418315256207",
-      "title": "Study notes!",
-      "description": "Your, studying notes here 📚",
-      "text": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      "date": "2022-12-16"
+      "id": 0.5687880602825199,
+      "title": "New note",
+      "description": "New note example",
+      "category": "another",
+      "cat_id": "0.5469818185471635",
+      "text": "New note text here Changed",
+      "date": ""
     }
   ]
 }

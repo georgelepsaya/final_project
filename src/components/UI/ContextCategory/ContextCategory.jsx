@@ -25,7 +25,6 @@ const ContextCategory = ({ mousePos, setNotesData, category, notesData }) => {
     }
 
     if (blockId === category.id) {
-      console.log("true");
       return navigate("/dashboard/markdown/all");
     }
   }

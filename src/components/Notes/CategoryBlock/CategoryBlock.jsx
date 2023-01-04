@@ -22,7 +22,7 @@ const CategoryBlock = ({ block, color, setNotesData, notesData, category }) => {
 
   return (
     <>
-      <NavLink onMouseMove={(e) => !showMenu && setMousePos([e.clientX, e.clientY])} onContextMenu={handleMenu} style={{ backgroundColor: color, boxShadow: `0 0 8px ${color}` }} to={block.id} className=
+      <NavLink onMouseMove={(e) => !showMenu && setMousePos([e.clientX, e.clientY])} onContextMenu={handleMenu} style={{ backgroundColor: color+"25", color: "#000", boxShadow: `0 0 8px ${color+"25"}` }} to={block.id} className=
         {({ isActive }) =>
           `${isActive ? styles.active_notes_link : undefined} ${styles.cat_list}`
         }>

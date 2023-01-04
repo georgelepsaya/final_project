@@ -77,6 +77,23 @@ ul {
   opacity: 0.5;
 }
 
+.right_side {
+  display: flex;
+  align-items: center;
+}
+
+.theme_toggle {
+  padding: 5px 8px;
+  border-radius: 8px;
+  background-color: rgb(237, 237, 237);
+  transition: all 150ms ease-in-out;
+  cursor: pointer;
+}
+
+.theme_toggle:hover {
+  background-color: rgb(227, 227, 227);
+}
+
 @media (max-width: 750px) {
   .title {
     display: none;

@@ -15,6 +15,8 @@ import "./index.css";
 import EditSingleNote from "./components/Notes/EditSingleNote/EditSingleNote";
 import NewSingleNote from "./components/Notes/NewSingleNote/NewSingleNote";
 
+import { AppProvider } from "./contexts/AppContext";
+
 const router = createHashRouter([
   {
     path: "/",
@@ -82,6 +84,8 @@ const router = createHashRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AppProvider>
+      <RouterProvider router={router} />
+    </AppProvider>
   </React.StrictMode>
 );

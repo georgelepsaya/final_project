@@ -33,13 +33,8 @@
   font-size: 15px;
   animation: appear;
   animation-duration: 300ms;
-  transition: all 150ms ease-in-out;
-  border-radius: 10px;
   width: 100%;
-}
-
-.table_main:hover {
-  box-shadow: 0 0 10px rgba(228, 228, 228, 0.6);
+  background-color: #fff;
 }
 
 .table_container {

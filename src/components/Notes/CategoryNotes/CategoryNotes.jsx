@@ -1,11 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import { FaPlus } from 'react-icons/fa';
 import { NavLink, useParams } from 'react-router-dom'
 import { useFetch } from '../../../hooks/useFetch';
 import styles from "./CategoryNotes.module.css"
 import NoteLink from './NoteLink/NoteLink';
+import AppContext from '../../../contexts/AppContext';
 
 const CategoryNotes = () => {
+  const { darkTheme } = useContext(AppContext);
+
   const { blockId } = useParams();
   let urlVal;
   if (blockId === "all") {
@@ -22,7 +25,7 @@ const CategoryNotes = () => {
 
   return (
     <div className={styles.notes_container}>
-      <NavLink to={`/dashboard/notes/${blockId}/new`} className={styles.new_note_container}>
+      <NavLink to={`/dashboard/notes/${blockId}/new`} style={darkTheme ? {backgroundColor: "#313843", color: "#fff", borderColor: "#ffffff10"} : {}} className={styles.new_note_container}>
         <FaPlus />&nbsp;&nbsp;&nbsp;New Note
       </NavLink>
       {catNotes && catNotes.map(note => {

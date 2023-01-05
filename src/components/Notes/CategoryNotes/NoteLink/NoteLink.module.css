@@ -8,6 +8,7 @@
   border-radius: 8px;
   cursor: pointer;
   transition: all 150ms ease-in-out;
+  background-color: #fff;
 }
 
 .note_container:hover {

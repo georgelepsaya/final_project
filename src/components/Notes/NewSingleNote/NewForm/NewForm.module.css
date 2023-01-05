@@ -9,6 +9,7 @@
   margin-bottom: 5px;
   border: none;
   outline: none;
+  background: none;
 }
 
 .single_note_container .descr_cont {
@@ -83,6 +84,7 @@
   font-size: 14px;
   margin-bottom: 20px;
   outline: none;
+  background: none;
 }
 
 .single_note_container .descr_input {
@@ -91,6 +93,7 @@
   margin-left: 10px;
   font-size: 15px;
   width: 70%;
+  background: none;
 }
 
 .single_note_container .note_text_field {
@@ -99,10 +102,11 @@
   font-size: 15px;
   resize: none;
   padding: 8px 10px;
-  border: 1px solid rgb(214, 214, 214);
+  border: none;
   border-radius: 7px;
   outline: none;
   min-height: 400px;
+  background: #fff;
 }
 
 @keyframes save_message {

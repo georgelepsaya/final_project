@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { Outlet } from 'react-router-dom';
 import CategoryBlock from './CategoryBlock/CategoryBlock';
 import styles from "./Notes.module.css"
+import AppContext from '../../contexts/AppContext';
 
 const Notes = () => {
+
+  const { darkTheme } = useContext(AppContext);
 
   const [notesData, setNotesData] = useState([]);
   const [newCategoryTitle, setNewCategoryTitle] = useState("");
@@ -71,7 +74,7 @@ const Notes = () => {
       <p className={styles.cat_text}>Categories</p>
       <div className={styles.notes_container_grid}>
         <div className={styles.container}>
-          <CategoryBlock key={"all"} color={"#6e6e6e"} block={{id: "all", title: "All"}} />
+          <CategoryBlock key={"all"} color={!darkTheme ? "#6e6e6e" : "#ffffff"} block={{id: "all", title: "All"}} />
           {notesData && notesData.map(block => {
             const color = generateCategoryColor(block.id);
             return (

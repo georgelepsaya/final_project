@@ -19,6 +19,7 @@
   opacity: 0.7;
   cursor: pointer;
   transition: all 150ms ease-in-out;
+  background-color: #fff;
 }
 
 .new_note_container:hover {

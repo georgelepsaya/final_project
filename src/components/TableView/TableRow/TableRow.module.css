@@ -149,6 +149,10 @@
   border: 1px solid #ededed;
 }
 
+.date_field {
+  cursor: pointer;
+}
+
 .btn_td {
   border: none;
   padding: 0;

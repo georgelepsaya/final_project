@@ -6,3 +6,8 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
+body {
+  background-color: #fbfcfe;
+  transition: all 300ms ease-in-out;
+}

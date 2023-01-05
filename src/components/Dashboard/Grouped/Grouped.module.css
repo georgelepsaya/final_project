@@ -22,14 +22,28 @@
   color: rgb(43, 107, 235);
 }
 
+.dt_welcome {
+  font-weight: 500;
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: rgb(219, 236, 255);
+}
+
 .description_group {
   background-color: rgba(132, 255, 159, 0.206);
   padding: 10px;
   padding-left: 18px;
   border-radius: 12px;
+  margin-bottom: 25px;
 }
 
 .description_group .tick {
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.description_group .tick_dark {
+  color: #000;
   font-size: 12px;
   margin-right: 10px;
 }
@@ -44,7 +58,6 @@
   align-items: center;
   transition: all 150ms ease-in-out;
   color: rgba(0, 0, 0, 0.74);
-  margin-top: 25px;
 }
 
 /* .arrow_down_clicked {

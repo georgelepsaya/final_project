@@ -48,6 +48,7 @@ ul {
 .home_button {
   border: 1px solid rgb(255, 255, 255);
   color: rgb(105, 105, 105);
+  background-color: #fff;
 }
 
 .home_button:hover {

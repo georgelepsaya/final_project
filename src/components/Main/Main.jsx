@@ -12,7 +12,7 @@ const Main = () => {
       document.body.style.backgroundColor = "#222831";
       document.body.style.color = "#fff";
     } else {
-      document.body.style.backgroundColor = "#fff";
+      document.body.style.backgroundColor = "#fbfcfe";
       document.body.style.color = "#000";
     }
   }, [darkTheme])

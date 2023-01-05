@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom'
 import ContextMenu from '../../../UI/ContextMenu/ContextMenu';
 import styles from "./NoteLink.module.css"
+import AppContext from '../../../../contexts/AppContext';
 
-const NoteLink = ({note, notes, setCatNotes}) => {
+const NoteLink = ({ note, notes, setCatNotes }) => {
+
+  const { darkTheme } = useContext(AppContext);
+
   const [showMenu, setShowMenu] = useState(false);
   const [mousePos, setMousePos] = useState([]);
 
@@ -21,7 +25,7 @@ const NoteLink = ({note, notes, setCatNotes}) => {
 
   return (
     <>
-      <NavLink onMouseMove={(e) => !showMenu && setMousePos([e.clientX, e.clientY])} onContextMenu={handleMenu} to={`/dashboard/notes/${note.id}`} className={styles.note_container}>
+      <NavLink onMouseMove={(e) => !showMenu && setMousePos([e.clientX, e.clientY])} onContextMenu={handleMenu} to={`/dashboard/notes/${note.id}`} className={styles.note_container} style={darkTheme ? {backgroundColor: "#313843", color: "#fff", borderColor: "#ffffff10"} : {}}>
         <div className={styles.upper_notes}>
           <div className={styles.info_notes}>
             <p className={styles.notes_title}>{note.title}</p>

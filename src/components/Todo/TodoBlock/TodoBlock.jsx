@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import styles from "./TodoBlock.module.css"
 import ListItem from './ListItem'
 import { FaPen, FaTrashAlt } from 'react-icons/fa';
 import EditTodoBlock from '../EditTodoBlock/EditTodoBlock';
+import AppContext from '../../../contexts/AppContext';
 
 const TodoBlock = ({ data, deleteBlock, setUpdate }) => {
+
+  const { darkTheme } = useContext(AppContext);
+
   const [todoList, setTodoList] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -31,7 +35,7 @@ const TodoBlock = ({ data, deleteBlock, setUpdate }) => {
   }
 
   return (
-    <div className={styles.container}>
+    <div style={darkTheme ? {backgroundColor: "rgb(49, 56, 67)", borderColor: "rgb(58, 65, 76)"} : {}} className={styles.container}>
       <div className={styles.btn_group}>
         <div className={styles.edit_btn} onClick={() => setIsEditing(prev => !prev)}>
           <FaPen className={styles.edit_icon} />

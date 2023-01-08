@@ -1,8 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { useParams, NavLink } from 'react-router-dom'
 import styles from "./NewForm.module.css"
+import AppContext from '../../../../contexts/AppContext'
 
 const NewForm = ({ categories }) => {
+
+  const { darkTheme } = useContext(AppContext);
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -68,12 +71,12 @@ const NewForm = ({ categories }) => {
       body: JSON.stringify(newNote)
     });
     setShowSavedMsg(true);
-    setTimeout(() => setShowSavedMsg(false), 1000)
+    setTimeout(() => setShowSavedMsg(false), 1000);
   }
 
   return (
     <form className={styles.single_note_container} onSubmit={handleSubmit}>
-          <div className={styles.info_container}>
+      <div className={styles.info_container}>
         <NavLink to={`/dashboard/markdown/${noteBlock}`} className={styles.back_link}>Back</NavLink>
         <div>
           {showSavedMsg && <span className={styles.saved_msg}>Saved changes!</span>}
@@ -81,16 +84,16 @@ const NewForm = ({ categories }) => {
         </div>
           </div>
           <div className={styles.info}>
-            <input placeholder='Title' onChange={handleChangeTitle} className={styles.edit_note_title} type="text" value={title} />
-            <input onChange={handleChangeDate} className={styles.date_pick} type="date" value={date} />
+            <input style={darkTheme ? { color: "#fff" } : {}} placeholder='Title' onChange={handleChangeTitle} className={styles.edit_note_title} type="text" value={title} />
+            <input style={darkTheme ? { color: "#fff", colorScheme: "dark" } : {}} onChange={handleChangeDate} className={styles.date_pick} type="date" value={date} />
           </div>
           <div className={styles.descr_cont}>
-            <span className={styles.descr_txt}>Category:</span><input placeholder='category' onChange={handleChangeCategory} className={styles.descr_input} type="text" value={category} />
+            <span style={darkTheme ? { color: "rgb(127, 136, 150)" } : {}} className={styles.descr_txt}>Category:</span><input style={darkTheme ? { color: "#fff" } : {}} placeholder='category' onChange={handleChangeCategory} className={styles.descr_input} type="text" value={category} />
           </div>
           <div className={styles.descr_cont}>
-            <span className={styles.descr_txt}>Description:</span><input placeholder='description' onChange={handleChangeDescription} type="text" className={styles.descr_input} value={description} />
+            <span style={darkTheme ? { color: "rgb(127, 136, 150)" } : {}} className={styles.descr_txt}>Description:</span><input style={darkTheme ? { color: "#fff" } : {}} placeholder='description' onChange={handleChangeDescription} type="text" className={styles.descr_input} value={description} />
           </div>
-      <textarea placeholder='Enter your text here' onChange={handleChangeText} className={styles.note_text_field} value={text} />
+      <textarea style={darkTheme ? { backgroundColor: "rgb(49, 56, 67)", color: "#fff" } : { }} placeholder='Enter your text here' onChange={handleChangeText} className={styles.note_text_field} value={text} />
     </form>
   )
 }

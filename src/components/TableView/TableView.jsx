@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import TableBody from './TableBody/TableBody';
 import styles from "./TableView.module.css"
 import { FaSave } from 'react-icons/fa';
+import AppContext from '../../contexts/AppContext';
 
-const TableView = ({restyle}) => {
+const TableView = ({ restyle }) => {
+  
+  const { darkTheme } = useContext(AppContext);
+
   const [tableRows, setTableRows] = useState([]);
   const [blocks, setBlocks] = useState([]);
   const [showSavedMsg, setShowSavedMsg] = useState(false);
@@ -114,7 +118,7 @@ const TableView = ({restyle}) => {
         </div>
       </div>
       <div className={styles.table_container}>
-        <table className={styles.table_main}>
+        <table style={darkTheme ? {backgroundColor: "rgb(34 40 49)"} : {}} className={styles.table_main}>
           <thead className={styles.table_head}>
             <tr>
               <th>Status</th>

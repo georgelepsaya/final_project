@@ -42,16 +42,6 @@
       "id": 3
     },
     {
-      "text": "Add category of notes in markdown",
-      "due": "2022-12-26",
-      "description": "",
-      "completed": false,
-      "block_id": "0.0012135188596738011",
-      "block_title": "New features",
-      "temp": 0.358420824712234,
-      "id": 8
-    },
-    {
       "text": "Save changes to a database",
       "due": "2022-12-26",
       "description": "",
@@ -103,7 +93,11 @@
     },
     {
       "title": "new",
-      "id": "0.6921256577529817"
+      "id": "0.02316791649861627"
+    },
+    {
+      "title": "new 1",
+      "id": "0.04605797626741448"
     }
   ],
   "notes": [
@@ -113,8 +107,8 @@
       "description": "This is an example",
       "category": "new category",
       "cat_id": "0.2428710082612775",
-      "text": "Example note here!\n\n\nChanged it\n\n...",
-      "date": "2022-12-28"
+      "text": "Example note here!\n\nChanged it",
+      "date": "2023-01-14"
     },
     {
       "id": 0.5687880602825199,

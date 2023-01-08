@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import styles from "./TableRow.module.css"
+import AppContext from '../../../contexts/AppContext';
 
 const TableRow = ({ rowContent, category, setTableRows }) => {
+
+  const { darkTheme } = useContext(AppContext);
 
   const [reveal, setReveal] = useState(true);
 
@@ -133,10 +136,10 @@ const TableRow = ({ rowContent, category, setTableRows }) => {
         <input className={`${styles.checkbox}`} onChange={handleCheck} type="checkbox" checked={rowData.completed} />
       </td>
       <td className={styles.centered_item}>
-        <input className={`${styles.input_row} ${styles.date_field}`} onChange={handleChangeDate} type="date" value={rowData.due ? rowData.due : ""} />
+        <input style={darkTheme ? {backgroundColor: "rgb(34 40 49)", colorScheme: "dark"} : {}} className={`${styles.input_row} ${styles.date_field}`} onChange={handleChangeDate} type="date" value={rowData.due ? rowData.due : ""} />
       </td>
       <td>
-        <textarea onChange={handleChangeText} onKeyUp={handleTextGrow} className={`${styles.input_row} ${styles.name_field}`} type="text" value={rowData.text} />
+        <textarea style={darkTheme ? {backgroundColor: "rgb(34 40 49)", color: "#fff"} : {}} onChange={handleChangeText} onKeyUp={handleTextGrow} className={`${styles.input_row} ${styles.name_field}`} type="text" value={rowData.text} />
       </td>
       <td className={`${styles.centered_item} ${styles.category_field}`}>
         { rowContent.block_id !== "" ?
@@ -148,7 +151,7 @@ const TableRow = ({ rowContent, category, setTableRows }) => {
         <button onClick={handleReveal} className={styles.reveal_btn}>
         {reveal ? "reveal" : "hide"}
         </button>
-        <textarea onChange={handleChangeDescription} onKeyUp={handleTextGrow} className={`${styles.input_row} ${styles.editable_field}`} value={rowData.description} />
+        <textarea style={darkTheme ? {backgroundColor: "rgb(34 40 49)", color: "#fff"} : {}} onChange={handleChangeDescription} onKeyUp={handleTextGrow} className={`${styles.input_row} ${styles.editable_field}`} value={rowData.description} />
       </td>
       <td className={styles.btn_td}>
         <button onClick={handleNewRow} className={styles.new_btn}>New row</button>

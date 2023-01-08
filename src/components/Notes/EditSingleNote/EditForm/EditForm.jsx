@@ -1,8 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from "./EditForm.module.css"
+import AppContext from '../../../../contexts/AppContext'
 
 const EditForm = ({ noteData, noteId }) => {
+
+  const { darkTheme } = useContext(AppContext);
 
   const [title, setTitle] = useState(noteData.title);
   const [description, setDescription] = useState(noteData.description);
@@ -56,16 +59,16 @@ const EditForm = ({ noteData, noteId }) => {
         </div>
           </div>
           <div className={styles.info}>
-            <input onChange={handleChangeTitle} className={styles.edit_note_title} type="text" value={title} />
-            <input onChange={handleChangeDate} className={styles.date_pick} type="date" value={date} />
+            <input style={darkTheme ? { color: "#fff" } : {}} onChange={handleChangeTitle} className={styles.edit_note_title} type="text" value={title} />
+            <input style={darkTheme ? { color: "#fff", colorScheme: "dark" } : {}} onChange={handleChangeDate} className={styles.date_pick} type="date" value={date} />
           </div>
           <div className={styles.descr_cont}>
-            <span className={styles.descr_txt}>Category:</span><input onChange={handleChangeCategory} className={styles.descr_input} type="text" value={category} />
+        <span style={darkTheme ? { color: "rgb(127, 136, 150)" } : {}} className={styles.descr_txt}>Category:</span><input style={darkTheme ? { color: "#fff" } : {}} onChange={handleChangeCategory} className={styles.descr_input} type="text" value={category} />
           </div>
           <div className={styles.descr_cont}>
-            <span className={styles.descr_txt}>Description:</span><input onChange={handleChangeDescription} type="text" className={styles.descr_input} value={description} />
+            <span style={darkTheme ? { color: "rgb(127, 136, 150)" } : {}} className={styles.descr_txt}>Description:</span><input style={darkTheme ? { color: "#fff" } : {}} onChange={handleChangeDescription} type="text" className={styles.descr_input} value={description} />
           </div>
-      <textarea onChange={handleChangeText} className={styles.note_text_field} value={text} />
+      <textarea style={darkTheme ? { backgroundColor: "rgb(49, 56, 67)", color: "#fff" } : { }} onChange={handleChangeText} className={styles.note_text_field} value={text} />
     </form>
   )
 }

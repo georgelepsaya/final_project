@@ -25,7 +25,7 @@ const CategoryBlock = ({ block, color, setNotesData, notesData, category }) => {
 
   return (
     <>
-      <NavLink onMouseMove={(e) => !showMenu && setMousePos([e.clientX, e.clientY])} onContextMenu={handleMenu} style={{ backgroundColor: color + (!darkTheme ? "25" : "45"), color: !darkTheme ? "#000" : "#ffffff85", boxShadow: `0 0 8px ${color+ (!darkTheme ? "25" : "45")}` }} to={block.id} className=
+      <NavLink onMouseMove={(e) => !showMenu && setMousePos([e.clientX, e.clientY])} onContextMenu={handleMenu} style={{ backgroundColor: color + (!darkTheme ? "25" : "50"), color: !darkTheme ? "#000" : "#ffffff", boxShadow: `0 0 8px ${color+ (!darkTheme ? "25" : "45")}` }} to={block.id} className=
         {({ isActive }) =>
           `${isActive ? styles.active_notes_link : undefined} ${styles.cat_list}`
         }>

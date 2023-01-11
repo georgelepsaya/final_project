@@ -41,7 +41,7 @@ const router = createHashRouter([
           },
           {
             path: "task-board",
-            element: <div>Task Board</div>,
+            element: <div>Coming Soon!</div>,
           },
           {
             path: "table-view",

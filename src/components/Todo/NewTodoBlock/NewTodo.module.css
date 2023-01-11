@@ -4,8 +4,25 @@
   font-size: 14px;
   padding: 5px;
   border: 1px solid rgb(239, 239, 239);
+  background-color: #fff;
   border-radius: 3px;
   outline: none;
+}
+
+.dark_todo_input {
+  width: 90%;
+  height: 35px;
+  font-size: 14px;
+  padding: 5px;
+  border: 1px solid rgb(74, 83, 96);
+  background-color: rgb(34, 40,49);
+  color: #fff;
+  border-radius: 3px;
+  outline: none;
+}
+
+.dark_todo_input::placeholder {
+  color: rgb(156, 156, 156);
 }
 
 .add_new_todo {

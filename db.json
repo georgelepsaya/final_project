@@ -5,12 +5,8 @@
       "id": "0.21506229311925296"
     },
     {
-      "title": "New features",
-      "id": "0.0012135188596738011"
-    },
-    {
-      "title": "Bugs",
-      "id": "0.3078441361898345"
+      "title": "Feature Plan",
+      "id": "0.008776920562418411"
     }
   ],
   "todos": [
@@ -42,44 +38,44 @@
       "id": 3
     },
     {
-      "text": "Save changes to a database",
-      "due": "2022-12-26",
-      "description": "",
+      "text": "Fix colors of menu buttons",
       "completed": false,
-      "block_id": "0.0012135188596738011",
-      "block_title": "New features",
-      "temp": 0.661446404762029,
-      "id": 9
+      "block_id": "0.008776920562418411",
+      "temp": 0.7556231457378195,
+      "id": 4,
+      "due": "2023-01-10"
     },
     {
-      "text": "Adding category from editing a note",
-      "due": "2022-12-26",
-      "description": "",
+      "text": "Finish dark theme colouring of TodoList",
       "completed": false,
-      "block_id": "0.0012135188596738011",
-      "block_title": "New features",
-      "temp": 0.07402096707399175,
-      "id": 10
+      "block_id": "0.008776920562418411",
+      "temp": 0.16573853075819867,
+      "id": 5,
+      "due": "2023-01-10"
     },
     {
-      "text": "Add global state management to show/hide some components and implement a dark theme",
-      "due": "2022-12-26",
-      "description": "",
+      "text": "Fix position of dark theme button",
       "completed": false,
-      "block_id": "0.0012135188596738011",
-      "block_title": "New features",
-      "temp": 0.613909535587603,
-      "id": 12
+      "block_id": "0.008776920562418411",
+      "temp": 0.567931947529096,
+      "id": 6,
+      "due": "2023-01-10"
     },
     {
-      "text": "Fix adding multiple notes from \"new\" form",
-      "due": "",
-      "description": "Only one note should be added, when save is pressed in the new form",
+      "text": "Fix grid and inner components postions",
       "completed": false,
-      "block_id": "0.3078441361898345",
-      "block_title": "Bugs",
-      "temp": 0.5738439186721598,
-      "id": 13
+      "block_id": "0.008776920562418411",
+      "temp": 0.45356164084463946,
+      "id": 7,
+      "due": "2023-01-10"
+    },
+    {
+      "text": "Make a simple landing on Home page",
+      "completed": false,
+      "block_id": "0.008776920562418411",
+      "temp": 0.32520314596979905,
+      "id": 8,
+      "due": "2023-01-10"
     }
   ],
   "notes_blocks": [
@@ -90,14 +86,6 @@
     {
       "title": "another",
       "id": "0.5469818185471635"
-    },
-    {
-      "title": "new",
-      "id": "0.02316791649861627"
-    },
-    {
-      "title": "new 1",
-      "id": "0.04605797626741448"
     }
   ],
   "notes": [

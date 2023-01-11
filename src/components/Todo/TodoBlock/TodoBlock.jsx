@@ -35,7 +35,7 @@ const TodoBlock = ({ data, deleteBlock, setUpdate }) => {
   }
 
   return (
-    <div style={darkTheme ? {backgroundColor: "rgb(49, 56, 67)", borderColor: "rgb(58, 65, 76)"} : {}} className={styles.container}>
+    <div className={darkTheme ? styles.dark_todo_container: styles.todo_block_container}>
       <div className={styles.btn_group}>
         <div className={styles.edit_btn} onClick={() => setIsEditing(prev => !prev)}>
           <FaPen className={styles.edit_icon} />
@@ -44,7 +44,7 @@ const TodoBlock = ({ data, deleteBlock, setUpdate }) => {
           <FaTrashAlt className={styles.delete_icon} />
         </div>
       </div>
-      <h3 name="title" className={styles.title}>
+      <h3 name="title" style={darkTheme ? {color: "#fff"} : {}} className={styles.title}>
         {data.title}
       </h3>
       {

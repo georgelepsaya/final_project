@@ -1,9 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import styles from "./NewTodoBlock.module.css"
 import NewTodo from './NewTodo'
 import { FaPlus } from 'react-icons/fa';
+import AppContext from '../../../contexts/AppContext';
 
 const NewTodoBlock = ({ addTodoBlock }) => {
+
+  const { darkTheme } = useContext(AppContext);
+
   const [newInputs, setNewInputs] = useState([]);
   const [blockTitle, setBlockTitle] = useState("");
 
@@ -63,9 +67,9 @@ const NewTodoBlock = ({ addTodoBlock }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className={styles.container}>
+    <form onSubmit={handleSubmit} className={darkTheme ? styles.dark_block_container : styles.new_todo_block_container}>
       <button className={styles.save_btn} type="submit">Save</button>
-      <input className={styles.title_input} onChange={handleChangeTitle} value={blockTitle} type="text" placeholder='Title' />
+      <input style={darkTheme ? { backgroundColor: "rgb(49, 56, 67)", color: "#fff" } : {}} className={darkTheme ? styles.dark_title_input : styles.title_input} onChange={handleChangeTitle} value={blockTitle} type="text" placeholder='Title' />
       {newInputs && newInputs.map(newInput => {
         return (
           <NewTodo data={newInput} key={newInput.temp} deleteTodo={handleDeleteTodo} changeTodoText={handleChangeTodoText} />

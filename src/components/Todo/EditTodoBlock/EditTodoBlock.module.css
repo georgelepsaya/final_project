@@ -9,7 +9,7 @@
   }
 }
 
-.container {
+.edit_block_container {
   background-color: #ffffff;
   border: 1px solid rgb(240, 240, 240);
   border-radius: 8px;
@@ -22,9 +22,26 @@
   position: relative;
 }
 
-.container:hover {
+.dark_edit_block_container {
+  border-radius: 8px;
+  height: 250px;
+  cursor: pointer;
+  padding: 5px 15px;
+  transition: all 150ms ease-in-out;
+  animation: appear;
+  animation-duration: 300ms;
+  position: relative;
+  background-color: rgb(49, 56, 67);
+  border: 1px solid rgb(58, 65, 76);
+}
+
+.edit_block_container:hover {
   box-shadow: 0 0 8px rgba(228, 228, 228, 0.6);
   /* transform: scale(1.01); */
+}
+
+.dark_edit_block_container:hover {
+  box-shadow: 0 0 8px rgba(77, 84, 101, 0.6);
 }
 
 .title_input {
@@ -39,6 +56,21 @@
 
 .title_input::placeholder {
   color: rgba(49, 50, 58, 0.6);
+}
+
+.dark_title_input {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  border: none;
+  outline: none;
+  margin: 5px 0 10px 0;
+  width: 100%;
+  background: none;
+}
+
+.dark_title_input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .add_todo_btn {
@@ -79,7 +111,7 @@
   cursor: pointer;
 }
 
-.container:hover .save_btn {
+.edit_block_container:hover .save_btn, .dark_edit_block_container:hover .save_btn {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -9,7 +9,7 @@
   }
 }
 
-.container {
+.todo_block_container {
   background-color: #ffffff;
   border: 1px solid rgb(240, 240, 240);
   border-radius: 8px;
@@ -22,7 +22,24 @@
   animation-duration: 300ms;
 }
 
-.container:hover {
+.dark_todo_container {
+  border-radius: 8px;
+  height: 250px;
+  cursor: pointer;
+  padding: 5px 15px;
+  transition: all 150ms ease-in-out;
+  position: relative;
+  animation: appear;
+  animation-duration: 300ms;
+  background-color: rgb(49, 56, 67);
+  border: 1px solid rgb(58, 65, 76);
+}
+
+.dark_todo_container:hover {
+  box-shadow: 0 0 8px rgba(77, 84, 101, 0.6);
+}
+
+.todo_block_container:hover {
   box-shadow: 0 0 8px rgba(228, 228, 228, 0.6);
   /* transform: scale(1.01); */
 }
@@ -35,7 +52,7 @@
   transition: all 150ms ease-in-out;
 }
 
-.container:hover .title {
+.todo_block_container:hover .title {
   color: rgb(49, 50, 58);
 }
 
@@ -63,7 +80,7 @@
   transition: all 150ms ease-in-out;
 }
 
-.container:hover .btn_group {
+.todo_block_container:hover .btn_group, .dark_todo_container:hover .btn_group {
   display: flex;
   justify-content: center;
   align-items: center;

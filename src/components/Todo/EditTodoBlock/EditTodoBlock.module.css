@@ -13,7 +13,7 @@
   background-color: #ffffff;
   border: 1px solid rgb(240, 240, 240);
   border-radius: 8px;
-  height: 250px;
+  min-height: 250px;
   cursor: pointer;
   padding: 5px 15px;
   transition: all 150ms ease-in-out;

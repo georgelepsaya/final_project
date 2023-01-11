@@ -13,13 +13,15 @@
   background-color: #ffffff;
   border: 1px solid rgb(240, 240, 240);
   border-radius: 8px;
-  height: 250px;
+  min-height: 250px;
+  height: fit-content;
   cursor: pointer;
   padding: 5px 15px;
   transition: all 150ms ease-in-out;
   animation: appear;
   animation-duration: 300ms;
   position: relative;
+  padding-bottom: 12px;
 }
 
 .dark_block_container {

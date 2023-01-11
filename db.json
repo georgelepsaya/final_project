@@ -39,7 +39,7 @@
     },
     {
       "text": "Fix colors of menu buttons",
-      "completed": false,
+      "completed": true,
       "block_id": "0.008776920562418411",
       "temp": 0.7556231457378195,
       "id": 4,
@@ -47,7 +47,7 @@
     },
     {
       "text": "Finish dark theme colouring of TodoList",
-      "completed": false,
+      "completed": true,
       "block_id": "0.008776920562418411",
       "temp": 0.16573853075819867,
       "id": 5,
@@ -55,7 +55,7 @@
     },
     {
       "text": "Fix position of dark theme button",
-      "completed": false,
+      "completed": true,
       "block_id": "0.008776920562418411",
       "temp": 0.567931947529096,
       "id": 6,
@@ -63,7 +63,7 @@
     },
     {
       "text": "Fix grid and inner components postions",
-      "completed": false,
+      "completed": true,
       "block_id": "0.008776920562418411",
       "temp": 0.45356164084463946,
       "id": 7,

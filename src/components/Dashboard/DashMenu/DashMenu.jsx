@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from "./DashMenu.module.css"
 import { NavLink, useLocation } from 'react-router-dom'
+import AppContext from "../../../contexts/AppContext"
 
 const DashMenu = () => {
+
+  const { darkTheme } = useContext(AppContext);
 
   const path = useLocation();
 
@@ -12,7 +15,7 @@ const DashMenu = () => {
         <NavLink
           to="todo"
           className={({ isActive }) =>
-            `${styles.menu_item} ${isActive ? styles.active_item : undefined}`
+            `${styles.menu_item} ${darkTheme && styles.dark_menu_item} ${isActive ? styles.active_item : undefined}`
           }
         >
           <span className={styles.big_item}>👌&nbsp;&nbsp;ToDo List</span>
@@ -27,7 +30,7 @@ const DashMenu = () => {
         <NavLink
           to="task-board"
           className={({ isActive }) =>
-            `${styles.menu_item} ${isActive ? styles.active_item : undefined}`
+            `${styles.menu_item} ${darkTheme && styles.dark_menu_item} ${isActive ? styles.active_item : undefined}`
           }
         >
           <span className={styles.big_item}>🧠&nbsp;&nbsp;Task Board</span>
@@ -42,7 +45,7 @@ const DashMenu = () => {
         <NavLink
           to="table-view"
           className={({ isActive }) =>
-            `${styles.menu_item} ${isActive ? styles.active_item : undefined}`
+            `${styles.menu_item} ${darkTheme && styles.dark_menu_item} ${isActive ? styles.active_item : undefined}`
           }
         >
           <span className={styles.big_item}>📋&nbsp;&nbsp;Table View</span>
@@ -57,7 +60,7 @@ const DashMenu = () => {
         <NavLink
           to="markdown/all"
           className={({ isActive }) =>
-            `${styles.menu_item} ${(isActive || path.pathname.includes("/markdown")) ? styles.active_item : undefined}`
+            `${styles.menu_item} ${darkTheme && styles.dark_menu_item} ${(isActive || path.pathname.includes("/markdown")) ? styles.active_item : undefined}`
           }
         >
           <span className={styles.big_item}>📝&nbsp;&nbsp;Markdown</span>

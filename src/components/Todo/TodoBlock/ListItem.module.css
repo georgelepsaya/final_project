@@ -5,7 +5,18 @@
   border-bottom: 1px solid rgb(245, 245, 245);
 }
 
+.dark_item_container {
+  display: flex;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px solid rgb(75, 82, 98);
+}
+
 .item_container:last-of-type {
+  border-bottom: none;
+}
+
+.dark_item_container:last-of-type {
   border-bottom: none;
 }
 
@@ -43,4 +54,16 @@
 .checkbox:checked {
   background-color: #7bb4ff;
   border: 1px solid #ededed;
+}
+
+.dark_checkbox {
+  border: 1px solid rgb(75, 82, 98);
+}
+
+.dark_checkbox:checked {
+  border: 1px solid rgb(75, 82, 98);
+}
+
+.dark_checkbox:hover {
+  background-color: rgb(95, 104, 124);
 }

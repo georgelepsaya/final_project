@@ -110,7 +110,7 @@
   cursor: pointer;
 }
 
-.new_todo_block_container:hover .save_btn {
+.new_todo_block_container:hover .save_btn, .dark_block_container:hover .save_btn {
   display: flex;
   justify-content: center;
   align-items: center;

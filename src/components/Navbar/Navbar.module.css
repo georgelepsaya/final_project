@@ -64,14 +64,14 @@ ul {
 
 .dashboard_button {
   background-color: rgb(255, 255, 255);
-  border: 2px solid rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
   color: rgb(100, 152, 255);
 }
 
 .dashboard_button:hover {
   background-color: rgb(94, 142, 237);
   box-shadow: 0px 0px 10px rgba(94, 142, 237, 0.8);
-  border: 2px solid rgb(94, 142, 237);
+  border: 1px solid rgb(94, 142, 237);
   color: #fff;
 }
 
@@ -100,13 +100,23 @@ ul {
 .theme_toggle {
   padding: 5px 8px;
   border-radius: 8px;
-  background-color: rgb(237, 237, 237);
+  background-color: #fff;
+  border: 1px solid rgb(242, 242, 242);
   transition: all 150ms ease-in-out;
   cursor: pointer;
 }
 
 .theme_toggle:hover {
-  background-color: rgb(227, 227, 227);
+  background-color: rgb(242, 242, 242);
+}
+
+.dark_theme_toggle {
+  background-color: #39424e;
+  border: 1px solid #465364;
+}
+
+.dark_theme_toggle:hover {
+  background-color: #465364;
 }
 
 @media (max-width: 750px) {
@@ -123,6 +133,7 @@ ul {
     cursor: pointer;
     transition: none
   }
+
   .home_button, .home_button:hover {
     border: 1px solid rgb(238, 238, 238);
     color: #000;
@@ -150,5 +161,18 @@ ul {
 
   .menu_item:hover {
     transform: none;
+  }
+
+  .dark_button {
+    background-color: #2b323c;
+    color: #fff;
+    border: 1px solid #39424e;
+  }
+
+  .dark_button:hover {
+    color: #fff;
+    box-shadow: none;
+    border: 1px solid #39424e;
+    background-color: #2b323c;
   }
 }

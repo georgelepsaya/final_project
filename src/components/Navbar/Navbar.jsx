@@ -12,11 +12,11 @@ const Navbar = () => {
         <li className={styles.menu_item}>
           <Link className={`${darkTheme && styles.dark_button} ${styles.home_button} ${styles.button_link} ${styles.link}`} to="/">🏠&nbsp;&nbsp;&nbsp;Home</Link>
         </li>
-        <li className={styles.theme_toggle} onClick={toggleTheme}>
+        <li className={`${ darkTheme && styles.dark_theme_toggle} ${styles.theme_toggle}`} onClick={toggleTheme}>
           {!darkTheme ? "🌚" : "🌞"}
         </li>
         <li className={styles.menu_item}>
-          <Link className={`${styles.dashboard_button} ${styles.button_link} ${styles.link}`} to="/dashboard">📒&nbsp;&nbsp;&nbsp;Dashboard</Link>
+          <Link className={`${darkTheme && styles.dark_button} ${styles.dashboard_button} ${styles.button_link} ${styles.link}`} to="/dashboard">📒&nbsp;&nbsp;&nbsp;Dashboard</Link>
         </li>
       </ul>
     </nav>

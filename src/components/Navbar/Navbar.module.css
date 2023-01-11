@@ -11,6 +11,7 @@ ul {
 .menu {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .link {
@@ -76,6 +77,19 @@ ul {
 
 .dashboard_button:active {
   opacity: 0.5;
+}
+
+.dark_button {
+  background-color: #2b323c;
+  color: #fff;
+  border: 1px solid #39424e;
+  box-shadow: 0px 2px 5px #39424e;
+}
+
+.dark_button:hover {
+  color: #fff;
+  box-shadow: none;
+  border: 1px solid #39424e;
 }
 
 .right_side {

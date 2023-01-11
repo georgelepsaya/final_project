@@ -10,7 +10,7 @@ const Navbar = () => {
     <nav className={styles.container}>
       <ul className={styles.menu}>
         <li className={styles.menu_item}>
-          <Link className={`${styles.home_button} ${styles.button_link} ${styles.link}`} to="/">🏠&nbsp;&nbsp;&nbsp;Home</Link>
+          <Link className={`${darkTheme && styles.dark_button} ${styles.home_button} ${styles.button_link} ${styles.link}`} to="/">🏠&nbsp;&nbsp;&nbsp;Home</Link>
         </li>
         <li className={styles.theme_toggle} onClick={toggleTheme}>
           {!darkTheme ? "🌚" : "🌞"}

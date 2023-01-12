@@ -47,6 +47,59 @@
   align-items: center;
 }
 
+.email_form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.name_input {
+  padding: 7px 15px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+.name_input_dark, .email_input_dark, .feedback_input_dark {
+  background-color: rgb(52, 59, 72);
+  color: #fff;
+}
+
+.email_input {
+  padding: 7px 15px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+.feedback_input {
+  padding: 7px 15px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 10px;
+  resize: none;
+}
+
+.submit_email_btn {
+  border-radius: 8px;
+  background-color: rgb(78, 159, 255);
+  border: none;
+  color: #fff;
+  padding: 7px 15px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.email_form_label {
+  font-size: 12px;
+  margin-top: 8px;
+}
+
 @media (max-width: 750px) {
   .home_container {
     width: 95%;

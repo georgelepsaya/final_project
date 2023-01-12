@@ -29,6 +29,18 @@ const Home = () => {
           <li className={styles.descr_item}>The application is simple to use, and its clean and intuitive design makes it easy for users to stay on top of their tasks and stay organized</li>
         </ul>
       </section>
+      <section>
+        <form className={styles.email_form}>
+          <h3>Stay Updated!</h3>
+          <label className={styles.email_form_label} htmlFor="name">Name</label>
+          <input id="name" className={`${styles.name_input} ${darkTheme && styles.name_input_dark}`} type='text' placeholder='Your name' />
+          <label className={styles.email_form_label} htmlFor='email'>Email</label>
+          <input id="email" className={`${styles.email_input} ${darkTheme && styles.email_input_dark}`} type='email' placeholder='Email' />
+          <label className={styles.email_form_label} htmlFor='feedback'>Feedback</label>
+          <textarea id="feedback" rows={8} className={`${styles.feedback_input} ${darkTheme && styles.feedback_input_dark}`} placeholder='Feedback' />
+          <button className={styles.submit_email_btn} type='submit'>Subscribe</button>
+        </form>
+      </section>
     </div>
   )
 }

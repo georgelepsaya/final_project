@@ -63,7 +63,7 @@ const DashMenu = () => {
             `${styles.menu_item} ${darkTheme && styles.dark_menu_item} ${(isActive || path.pathname.includes("/markdown")) ? styles.active_item : undefined}`
           }
         >
-          <span className={styles.big_item}>📝&nbsp;&nbsp;Markdown</span>
+          <span className={styles.big_item}>📝&nbsp;&nbsp;Notes</span>
           <span className={styles.small_item}>
             📝
             <br />

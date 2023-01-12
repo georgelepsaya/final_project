@@ -54,6 +54,7 @@
   }
   .header_description {
     flex-direction: column;
+    margin: 10px 0;
   }
   .feature_section {
     flex-direction: column-reverse;
@@ -65,5 +66,8 @@
   .feature_img {
     width: 80%;
     margin-top: 30px;
+  }
+  .feature_text {
+    font-size: 16px;
   }
 }

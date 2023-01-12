@@ -24,7 +24,8 @@
 
 .dark_edit_block_container {
   border-radius: 8px;
-  height: 250px;
+  min-height: 250px;
+  height: fit-content;
   cursor: pointer;
   padding: 5px 15px;
   transition: all 150ms ease-in-out;

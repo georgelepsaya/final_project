@@ -70,7 +70,7 @@ const Notes = () => {
 
   return (
     <div className={styles.main}>
-      <h3 className={styles.page_title}>Markdown Notes</h3>
+      <h3 className={styles.page_title}>Notes</h3>
       <p className={styles.cat_text}>Categories</p>
       <div className={styles.notes_container_grid}>
         <div className={styles.container}>
